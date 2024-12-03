@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'allauth',
     'allauth.account',
+    'hygge_houseplants',
 ]
 
 MIDDLEWARE = [
