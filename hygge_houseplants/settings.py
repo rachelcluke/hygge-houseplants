@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'hygge_houseplants',
+    'home',
+    'products'
 ]
 
 MIDDLEWARE = [
