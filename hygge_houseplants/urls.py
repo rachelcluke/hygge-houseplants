@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from hygge_houseplants.views import get_landing_page
+#from hygge_houseplants.views import get_landing_page
+from home.views import get_landing_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
