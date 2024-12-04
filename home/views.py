@@ -3,5 +3,9 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
 
-def get_landing_page(request):
- return render(request, 'index.html')
+def index(request):
+    """ A view to return the index page """
+
+    return render(request, 'home/index.html')
+
+from django.shortcuts import render

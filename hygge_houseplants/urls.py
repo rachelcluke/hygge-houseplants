@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 #from hygge_houseplants.views import get_landing_page
-from home.views import get_landing_page
+from home.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', get_landing_page, name='get_landing_page')
+    path('', index, name='index')
 ]
