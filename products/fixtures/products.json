@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "products.product", "fields": {"sku": "xxx", "name": "xxx", "description": "xxx", "price": 53.99, "category": 1, "rating": 4.2, "image": "xxx.jpg", "image_url": "https://xxx"}}]
