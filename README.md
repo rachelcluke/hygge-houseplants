@@ -34,8 +34,6 @@ The last update to this file was: **December 9th, 2024**
   - [Moodboard](#moodboard)
   - [Fonts](#fonts)
   - [Icons](#icons)
-  - [Colours](#colours)
-  - [Media Queries](#media-queries)
   - [Wireframes](#wireframes)
   - [Mockups](#mockups)
 - [Features](#features)
@@ -136,6 +134,18 @@ The wireframes are located below:
 
 ## Mockups
 Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ "Figma") to help me plan the interface design. Mockups for both mobile and desktop have been created as part of the website design phase, and can be viewed via this link [Mockups](https://www.figma.com/design/DhvQKsOvO6ar8RNbsWME8C/Project-4?node-id=0-11 "Mockups").
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Relational Database Management
+
+## Model Plan
+The first design phase of the database models was mapped out using [DrawSQL](https://drawsql.app/ "DrawSQL"), which is a database design tool for creating scheme diagrams. To view my database plan, refer to the following link: [DrawSQL Plan](https://drawsql.app/teams/code-institute-26/diagrams/hygge-houseplants "DrawSQL Plan").
+
 
 \
 &nbsp;
