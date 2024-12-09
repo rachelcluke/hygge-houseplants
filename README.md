@@ -141,11 +141,62 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 \
 &nbsp;
 
+# Technologies used
+
+## Languages
+
+- [HTML](https://en.wikipedia.org/wiki/HTML "HTML")
+  
+- [CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript")
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python")
+
+## IDE
+
+- [GitPod](https://www.gitpod.io/ "GitPod")
+
+## Libraries & Framework
+
+- [Google Fonts](https://fonts.google.com/ "Google Fonts")
+  
+- [Font Awesome library](https://fontawesome.com/ "Font Awesome")
+
+- [Favicon](https://favicon.io/ "Favicon")
+
+- [Django](https://www.djangoproject.com/ "Django")
+
+- [PostgreSQL](https://www.postgresql.org/ "PostgreSQL")
+
+## Tools
+
+- [Mila Note](https://milanote.com/ "Mila Note")
+  
+- [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq")
+
+- [CI Full Template](https://github.com/Code-Institute-Org/ci-full-template "CI Full Template")
+  
+- [Am I Responsive](https://ui.dev/amiresponsive "Am I Responsive")
+
+- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
+  
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
+
+- [W3C JS Validation Service](https://jshint.com "JSHint JS") 
+
+- [Python PEP8 checker](https://www.codewof.co.nz/style/python3/ "Python PEP8 checker")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 # Relational Database Management
 
 ## Model Plan
 The first design phase of the database models was mapped out using [DrawSQL](https://drawsql.app/ "DrawSQL"), which is a database design tool for creating scheme diagrams. To view my database plan, refer to the following link: [DrawSQL Plan](https://drawsql.app/teams/code-institute-26/diagrams/hygge-houseplants "DrawSQL Plan").
-
 
 \
 &nbsp;
