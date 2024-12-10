@@ -19,7 +19,7 @@ The following are high-level details of this project:
 - The final version has been deployed via GitHub Pages.
 - There are no passwords or secret keys in the project repository. 
 
-The last update to this file was: **December 9th, 2024**
+The last update to this file was: **December 10th, 2024**
 
 \
     &nbsp;
@@ -178,6 +178,8 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 - [CI Full Template](https://github.com/Code-Institute-Org/ci-full-template "CI Full Template")
   
 - [Am I Responsive](https://ui.dev/amiresponsive "Am I Responsive")
+
+- [DrawSQL](https://drawsql.app/ "DrawSQL")
 
 - [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
   
