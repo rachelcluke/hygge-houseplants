@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&family=Gelasio:wght@600&family=Hind:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --polarwhite: #FAFCFE;
+    --yellowgreen: #F8FFD2;
+    --palegreen: #BCCEB5;
+    --orange: #E7832D;
+    --darkgreen: #25463F;
+    --bluegray: #D5E0E9;
+    --peach: #FEE1C8;
+    --black: #101010;
+    --font-gelasio: "Gelasio", sans-serif;
+    --font-figtree: "Figtree", sans-serif;
+    --font-hind: "Hind", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-size: 1.6rem;
+    max-width: 100%;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: var(--orange);
+    color: var(--darkgreen);
+    min-width: 3rem;
+}
+
+.btn-black {
+    background: var(--black);
+    color: var(--polarwhite);
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: var(--black);
+    color: var(--polarwhite);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.border-black {
+    border: 1px solid var(--black);
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* Fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
