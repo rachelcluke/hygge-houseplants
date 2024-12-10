@@ -48,13 +48,13 @@ body {
 }
 
 .shop-now-button {
-    background: var(--orange);
+    background-color: var(--orange);
     color: var(--darkgreen);
     min-width: 3rem;
 }
 
 .btn-black {
-    background: var(--black);
+    background-color: var(--black);
     color: var(--polarwhite);
 }
 
@@ -64,7 +64,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: var(--black);
+    background-color: var(--black);
     color: var(--polarwhite);
 }
 
@@ -87,15 +87,8 @@ body {
 
 /* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 10%;
     }
 }
