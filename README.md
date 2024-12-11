@@ -200,6 +200,47 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 ## Model Plan
 The first design phase of the database models was mapped out using [DrawSQL](https://drawsql.app/ "DrawSQL"), which is a database design tool for creating scheme diagrams. To view my database plan, refer to the following link: [DrawSQL Plan](https://drawsql.app/teams/code-institute-26/diagrams/hygge-houseplants "DrawSQL Plan").
 
+
+## Models
+
+### Category Table
+
+| Primary Key | Name             | User Friendly Name |
+|-------------|------------------|--------------------|
+| 1           | cacti_succulents | Cacti & Succulents |
+| 2           | hanging_trailing | Hanging & Trailing |
+| 3           | foliage_fern     | Foliage & Fern     |
+| 4           | tropical         | Tropical           |
+
+### Product Table
+
+<!--TODO: add product table once image urls are configured-->
+
+
+### Plant Care Level Table
+
+| Primary Key | Name        | User Friendly Name |
+|-------------|-------------|--------------------|
+| 1           | low_care    | Unkillable         |
+| 2           | medium_care | Easy to take care  |
+| 3           | high_care   | Needs a lot of TLC |
+
+### Plant Light Level Table
+
+| Primary Key | Name         | User Friendly Name |
+|-------------|--------------|--------------------|
+| 1           | low_light    | Low Light          |
+| 2           | medium_light | Medium Light       |
+| 3           | high_light   | Bright Light       |
+
+### Discount Code Table
+
+| Primary Key | Code          | Discount % | Description                | Active? | Validity Start Datetime | Validity End Datetime |
+|-------------|---------------|------------|----------------------------|---------|-------------------------|-----------------------|
+| 1           | WELCOME15     | 15         | New Members Discount       | Yes     | 01/04/2024 00:00:00     | 01/04/2025 00:00:00   |
+| 2           | pRL29Akc04    | 10         | Student Discount           | Yes     | 11/12/2024 00:00:00     | 11/02/2024 00:00:00   |
+| 3           | BLACKFRIYAY25 | 25         | Black Friday 2024 Discount | No      | 28/11/2024 00:00:00     | 30/11/2024 00:00:00   |
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
