@@ -19,7 +19,7 @@ The following are high-level details of this project:
 - The final version has been deployed via GitHub Pages.
 - There are no passwords or secret keys in the project repository. 
 
-The last update to this file was: **December 10th, 2024**
+The last update to this file was: **December 11th, 2024**
 
 \
     &nbsp;
@@ -179,6 +179,8 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
   
 - [Am I Responsive](https://ui.dev/amiresponsive "Am I Responsive")
 
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables "Tables Generator")
+
 - [DrawSQL](https://drawsql.app/ "DrawSQL")
 
 - [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
@@ -198,7 +200,8 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 # Relational Database Management
 
 ## Model Plan
-The first design phase of the database models was mapped out using [DrawSQL](https://drawsql.app/ "DrawSQL"), which is a database design tool for creating scheme diagrams. To view my database plan, refer to the following link: [DrawSQL Plan](https://drawsql.app/teams/code-institute-26/diagrams/hygge-houseplants "DrawSQL Plan").
+The first design phase of the database models was mapped out using [DrawSQL](https://drawsql.app/ "DrawSQL"), which is a database design tool for creating scheme diagrams. Below is the model plan designed with DrawSQL: 
+![DrawSQL Plan](static/docs/drawSQL.png)
 
 
 ## Models
