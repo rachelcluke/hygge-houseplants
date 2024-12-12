@@ -1,4 +1,8 @@
 from django.contrib import admin
-#from .models import Product, Category
+from .models import Category, Care, Light, Product, Discount
 
-# Register models here
+admin.site.register(Category)
+admin.site.register(Product)
+admin.site.register(Care)
+admin.site.register(Light)
+admin.site.register(Discount)

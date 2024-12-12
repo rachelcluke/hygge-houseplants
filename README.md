@@ -19,7 +19,7 @@ The following are high-level details of this project:
 - The final version has been deployed via GitHub Pages.
 - There are no passwords or secret keys in the project repository. 
 
-The last update to this file was: **December 11th, 2024**
+The last update to this file was: **December 12th, 2024**
 
 \
     &nbsp;
