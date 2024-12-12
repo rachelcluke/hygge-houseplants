@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "products.light", "fields": {"name": "low_light", "user_friendly_name": "Low light"}}, {"pk": 2, "model": "products.light", "fields": {"name": "medium_light", "user_friendly_name": "Medium light"}}, {"pk": 3, "model": "products.light", "fields": {"name": "high_light", "user_friendly_name": "Bright light"}}]

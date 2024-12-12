@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "products.care", "fields": {"name": "low_care", "user_friendly_name": "Unkillable"}}, {"pk": 2, "model": "products.care", "fields": {"name": "medium_care", "user_friendly_name": "Easy to take care"}}, {"pk": 3, "model": "products.care", "fields": {"name": "high_care", "user_friendly_name": "Needs a lot of TLC"}}]
