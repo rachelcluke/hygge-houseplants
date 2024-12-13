@@ -51,7 +51,7 @@ class Product(models.Model):
     product_description = models.TextField()
     sale = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    sale_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True)
+    sale_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1020, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -60,6 +60,10 @@ class Product(models.Model):
     pet_friendly = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
+        """Method to return Product name."""
+        return self.product_name
+
+    def __repr__(self):
         """Magic Method to return Products category, name, species, description, sale?, price, sale_price, rating, image_url, image, care, light, pet_friendly."""
         return self.category_ref, self.product_name, self.species, self.product_description, self.sale, self.price, self.sale_price, self.rating, self.image_url, self.image, self.care_ref, self.light_ref, self.pet_friendly
 
