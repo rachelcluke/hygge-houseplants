@@ -79,5 +79,9 @@ class Discount(models.Model):
         return f"{self.discount} %"
 
     def __str__(self):
+        """Method to return Discount Code."""
+        return self.code
+
+    def __repr__(self):
         """Magic Method to return Discount code, discount %, active?, validity_start, validiy end."""
         return self.code, self.discount, self.discount_description, self.active, self.validity_start, self.validity_end
