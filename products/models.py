@@ -52,7 +52,7 @@ class Product(models.Model):
     sale = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     sale_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True, validators=[MaxValueValidator(5), MinValueValidator(0)])
     image_url = models.URLField(max_length=1020, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     care_ref = models.ForeignKey('Care', null=True, blank=True, on_delete=models.CASCADE)
