@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Category(models.Model):
     """Category Class contains category name and category user friendly name."""
@@ -65,7 +66,8 @@ class Product(models.Model):
 class Discount(models.Model):
     """Discount Class contains code, discount, active?, validity_start and validity_end."""
     code = models.CharField(max_length=50)
-    discount = models.IntegerField(blank=True, default=0)
+    discount = models.IntegerField(blank=True, default=0,
+        validators=[MaxValueValidator(99), MinValueValidator(1)])
     discount_description = models.TextField()
     active = models.BooleanField(default=False, null=True, blank=True)
     validity_start = models.DateTimeField()
