@@ -31,7 +31,8 @@ DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = [
     '8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net',
-    'https://8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net '
+    'https://8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net',
+    'ms4-hygge-houseplants.herokuapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net']
