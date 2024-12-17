@@ -19,7 +19,7 @@ The following are high-level details of this project:
 - The final version has been deployed via GitHub Pages.
 - There are no passwords or secret keys in the project repository. 
 
-The last update to this file was: **December 16th, 2024**
+The last update to this file was: **December 17th, 2024**
 
 \
     &nbsp;
@@ -117,6 +117,9 @@ The wireframes are located below:
 [Landing Page - Mobile & Desktop Wireframes](static/docs/wireframes/wireframe-landing-mobile-desktop.png "home mobile and desktop wireframes")
 
 [Product Page - Mobile & Desktop Wireframes](static/docs/wireframes/wireframe-product-mobile-desktop.png "product mobile and desktop wireframes")
+
+[Single Product Page - Mobile & Desktop Wireframes](static/docs/wireframes/wireframe-product-focus-mobile-desktop.png "single product mobile and desktop wireframes")
+
 
 [Basket Page - Mobile & Desktop Wireframes](static/docs/wireframes/wireframe-basket-mobile-desktop.png "basket mobile and desktop wireframes")
 
