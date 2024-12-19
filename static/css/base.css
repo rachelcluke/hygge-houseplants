@@ -39,8 +39,29 @@ body {
     display: none !important;
 }
 
+/*Header*/
+header {
+    background-color: var(--darkgreen);
+    color: var(--yellowgreen);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: var(--font-figtree);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: var(--yellowgreen);
+}
+
+.nav-link:hover {
+    color: var(--polarwhite);
+}
+
 .logo-font {
     text-transform: uppercase;
+    font-family: var(--font-figtree);
+    font-weight: 500;
 }
 
 .main-logo-link {
