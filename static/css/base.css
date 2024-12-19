@@ -113,6 +113,10 @@ header {
     padding-bottom: 1%;
 }
 
+.launch-02 {
+    background-color: var(--peach);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
