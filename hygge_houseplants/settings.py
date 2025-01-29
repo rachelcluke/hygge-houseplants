@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
+# if os.path.isfile('env.py'):
+# import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,12 +31,15 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net',
-    'https://8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net',
+    'https://8000-rachelcluke-hyggehousep- \
+        7s7z04x7b7l.ws.codeinstitute-ide.net',
     'ms4-hygge-houseplants.herokuapp.com',
     'ms4-hygge-houseplants-727aa19c949d.herokuapp.com',
+    '127.0.0.1'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://localhost',
+                        'https://*.herokuapp.com']
 
 
 # Application definition
@@ -115,12 +118,12 @@ WSGI_APPLICATION = 'hygge_houseplants.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # This is the old sqlite3 use for development environment
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
+# DATABASES = {
+# 'default': {
+# 'ENGINE': 'django.db.backends.sqlite3',
+# 'NAME': BASE_DIR / 'db.sqlite3',
+# }
+# }
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -140,16 +143,20 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation. \
+            NumericPasswordValidator',
     },
 ]
 
@@ -172,8 +179,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
