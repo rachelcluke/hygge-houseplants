@@ -1,6 +1,6 @@
 import os
 
 if os.path.exists("env.py"):
-    # import env
+    import env
 
     print(os.getenv("envpy_test"))
