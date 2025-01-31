@@ -64,12 +64,15 @@ class Product(models.Model):
     pet_friendly = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
-        """Method to return Product name."""
         return self.product_name
+    
+    # def __str__(self):
+        # """Method to return Product name."""
+        # return self.product_name
 
-    def __repr__(self):
-        """Magic Method to return Products category, name, species, description, sale?, price, sale_price, rating, image_url, image, care, light, pet_friendly."""
-        return self.category_ref, self.product_name, self.species, self.product_description, self.sale, self.price, self.sale_price, self.rating, self.image_url, self.image, self.care_ref, self.light_ref, self.pet_friendly
+    # def __repr__(self):
+        # """Magic Method to return Products category, name, species, description, sale?, price, sale_price, rating, image_url, image, care, light, pet_friendly."""
+        # return self.category_ref, self.product_name, self.species, self.product_description, self.sale, self.price, self.sale_price, self.rating, self.image_url, self.image, self.care_ref, self.light_ref, self.pet_friendly
 
 
 class Discount(models.Model):
