@@ -72,8 +72,8 @@ header {
 }
 
 .shop-now-button {
-    background-color: var(--orange);
-    color: var(--darkgreen);
+    background-color: var(--black);
+    color: var(--polarwhite);
     min-width: 3rem;
 }
 
@@ -83,13 +83,12 @@ header {
 }
 
 .shop-now-button:hover,
-.shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background-color: var(--black);
-    color: var(--polarwhite);
+    background-color: var(--orange);
+    color: var(--black);
 }
 
 .text-black {
