@@ -83,12 +83,22 @@ header {
 }
 
 .shop-now-button:hover,
+.btn-black:hover,
+.category-caption:hover {
+    text-decoration: none;
+}
+
+.shop-now-button:hover,
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
     background-color: var(--orange);
     color: var(--black);
+}
+
+.category-caption:hover {
+    opacity: 50%;
 }
 
 .text-black {
