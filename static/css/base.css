@@ -101,18 +101,25 @@ header {
 
 /*Launch Page*/
 
-.launch-title {
+.launch-title, .shop-collection-title, .company-reasons-title {
     font-family: var(--font-gelasio);
     color: var(--darkgreen);
 }
 
+.launch-01, .launch-02, .launch-03 {
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
 .launch-01 {
     background-color: var(--bluegray);
-    padding-top: 3%;
-    padding-bottom: 1%;
 }
 
 .launch-02 {
+    background-color: var(--polarwhite);
+}
+
+.launch-03 {
     background-color: var(--peach);
 }
 
@@ -123,6 +130,17 @@ header {
 
 #icon-user, #icon-bag {
     font-size: 1.6em;
+}
+
+.category-img {
+    height: 20vh;
+    width: 25vh;
+}
+
+.category-caption {
+    font-size: 1.6rem;
+    color: var(--black);
+    white-space: nowrap;
 }
 
 /* -------------------------------- Media Queries */
