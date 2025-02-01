@@ -17,10 +17,11 @@
         </a>
         <div class="dropdown-menu border-0" aria-labelledby="shop-link">
             <a href="{% url 'products' %}" class="dropdown-item">Shop All</a>
-            <a href="" class="dropdown-item">Cacti & Succulents</a>
-            <a href="" class="dropdown-item">Hanging & Trailing</a>
-            <a href="" class="dropdown-item">Foliage & Fern</a>
-            <a href="" class="dropdown-item">Tropical</a>
+            <a href="{% url 'products' %}?category=cacti_succulents" class="dropdown-item">Cacti & Succulents</a>
+            <a href="{% url 'products' %}?category=hanging_trailing" class="dropdown-item">Hanging & Trailing</a>
+            <a href="{% url 'products' %}?category=foliage_fern" class="dropdown-item">Foliage & Fern</a>
+            <a href="{% url 'products' %}?category=tropical" class="dropdown-item">Tropical</a>
+            <!-- TODO: Query sale items (product property)-->
             <a href="" class="dropdown-item">SALE</a>
         </div>
     </li>
