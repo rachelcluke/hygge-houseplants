@@ -142,6 +142,10 @@ header {
     font-size: 1.6em;
 }
 
+#icon-search {
+    color: var(--polarwhite);
+}
+
 .category-img {
     height: 20vh;
     width: 25vh;
