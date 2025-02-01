@@ -117,6 +117,11 @@ header {
     background-color: var(--peach);
 }
 
+#banner {
+    background-color: var(--black);
+    width: 100vw;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -129,7 +134,7 @@ header {
 /* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
 
-    .header-container {
-        padding-top: 10%;
+    #launch-section{
+        padding-top: 4%;
     }
 }

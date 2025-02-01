@@ -39,12 +39,11 @@
   <body>
     <header class="container-fluid fixed-top">
         {% include 'includes/main-nav.html' %}
+        <!-- TODO: Fix banner -->
+        <!-- {% include 'includes/banner.html' } -->
     </header>
 
-    <!-- TODO: Add banner here -->
-
     {% if messages %}
-        <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
