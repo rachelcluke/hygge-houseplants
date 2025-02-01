@@ -34,7 +34,7 @@
     </li>
     <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <form method="GET" action="{% url 'products' %}">
-            <div class="input-group w-50">
+            <div class="input-group w-60">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
                 <div class="input-group-append">
                     <button class="form-control btn btn-black border border-black rounded-0" type="submit">
@@ -47,7 +47,7 @@
         </form>
     </div>
     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-        <li class="list-inline-item dropdown">
+        <li class="list-inline-item dropdown" id="icon-user">
             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-user fa-lg"></i></div>
@@ -68,7 +68,7 @@
                 {% endif %}
             </div>
         </li>
-        <li class="list-inline-item">
+        <li class="list-inline-item"  id="icon-bag">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="">
                 <div class="text-center">
                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>

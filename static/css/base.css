@@ -122,6 +122,10 @@ header {
     width: 100vw;
 }
 
+#icon-user, #icon-bag {
+    font-size: 1.6em;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
