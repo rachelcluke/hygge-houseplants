@@ -157,6 +157,11 @@ header {
     white-space: nowrap;
 }
 
+#sort-dropdown {
+    background-color: var(--polarwhite);
+    color: var(--black);
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -171,5 +176,9 @@ header {
 
     #launch-section{
         padding-top: 4%;
+    }
+
+    #products-page {
+        margin-top: 10%;
     }
 }

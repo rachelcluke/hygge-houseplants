@@ -1,0 +1,14 @@
+
+
+<li class="nav-item dropdown list-unstyled border-black w-20">
+    <a class="nav-link" href="{% url 'products' %}" id="sort-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="row">
+            <p class="my-0">Sort By</p>
+        </div>
+    </a>
+    <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+        <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+        <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item ">Price: Low to High</a>
+        <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item ">Price: High to Low</a>
+    </div>
+</li>
