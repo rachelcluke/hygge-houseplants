@@ -8,8 +8,14 @@
     <div class="container-fluid" id="products-page">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
-                <!-- TODO: resolve categories not being displayed -->
+                {% if current_categories %}
+                    {% for c in current_categories %}
+                        <h2 class="logo-font">{{ c.user_friendly_name }}</h2>
+                    {% endfor %}
+                {% else %}
+                    <h2 class="logo-font">Products</h2>
+                {% endif %}
+                    
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.user_friendly_name }}</span>
