@@ -10,10 +10,10 @@
             <div class="col text-center mt-3">
                 {% if current_categories %}
                     {% for c in current_categories %}
-                        <h2 class="logo-font">{{ c.user_friendly_name }}</h2>
+                        <h2 class="title text-lowercase">{{ c.user_friendly_name }}</h2>
                     {% endfor %}
                 {% else %}
-                    <h2 class="logo-font">Products</h2>
+                    <h2 class="title text-lowercase">Products</h2>
                 {% endif %}
                 <!-- TODO: resolve why category badges are not displaying -->
                 {% for c in current_categories %}
@@ -21,10 +21,9 @@
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.user_friendly_name }}</span>
                     </a>
                 {% endfor %}
-                <hr class="w-50 mb-1">
             </div>
         </div>
-        <div class="row mt-1 mb-2">
+        <div class="row mt-1 mb-2" id="product-sort-filter-row">
             {% include 'includes/sort-dropdown.html' %}
             {% include 'includes/search-results.html' %}
         </div>

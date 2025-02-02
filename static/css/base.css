@@ -111,7 +111,7 @@ header {
 
 /*Launch Page*/
 
-.launch-title, .shop-collection-title, .company-reasons-title {
+.launch-title, .shop-collection-title, .company-reasons-title, .title {
     font-family: var(--font-gelasio);
     color: var(--darkgreen);
 }
@@ -197,6 +197,16 @@ a.category-badge > span.badge:hover {
     }
 
     #products-page {
-        margin-top: 10%;
+        margin-top: 7%;
     }
+
+    .title {
+        font-size: 3rem;
+        padding-bottom: 1rem;
+    }
+
+    #product-sort-filter-row {
+        padding-bottom: 4rem;
+    }
+    
 }
