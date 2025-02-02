@@ -15,7 +15,7 @@
                 {% else %}
                     <h2 class="logo-font">Products</h2>
                 {% endif %}
-                    
+                <!-- TODO: resolve why category badges are not displaying -->
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.user_friendly_name }}</span>
@@ -25,6 +25,7 @@
             </div>
         </div>
         <div class="row mt-1 mb-2">
+            <!-- TODO: resolve why sort is not working -->
             {% include 'includes/sort-dropdown.html' %}
             {% include 'includes/search-results.html' %}
         </div>
