@@ -162,6 +162,12 @@ header {
     color: var(--black);
 }
 
+a.category-badge > span.badge:hover {
+    background: var(--black) !important;
+    color: var(--polarwhite) !important;
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
