@@ -21,6 +21,11 @@
 
         <div class="row">
             <div class="col">
+                <div id="delivery-banner" class="row text-center">
+                    <div class="col bg-black">
+                        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
+                    </div>            
+                </div>
                 {% if bag_items %}
                     <div class="table-responsive rounded"></div>
                 {% else %}
