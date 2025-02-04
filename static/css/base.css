@@ -26,6 +26,16 @@ body {
     max-width: 100%;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -71,7 +81,7 @@ header {
     font-family: var(--font-hind);
 }
 
-.shop-now-button {
+.default-button {
     background-color: var(--black);
     color: var(--polarwhite);
     min-width: 3rem;
@@ -82,14 +92,14 @@ header {
     color: var(--polarwhite);
 }
 
-.shop-now-button:hover,
+.default-button:hover,
 .btn-black:hover,
 .category-caption:hover {
     text-decoration: none;
 }
 
-.shop-now-button:hover,
-.shop-now-button:focus,
+.default-button:hover,
+.default-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
