@@ -119,6 +119,17 @@ header {
     border: 1px solid var(--black);
 }
 
+.btn-black {
+    background: var(--black);
+    color: var(--polarwhite)
+}
+
+.btn-outline-black {
+    background: var(--polarwhite);
+    color: var(--black) !important; 
+    border: 1px solid var(--black);
+}
+
 /*Launch Page*/
 
 .launch-title, .shop-collection-title, .company-reasons-title, .title {
@@ -206,6 +217,12 @@ a.category-badge > span.badge:hover {
 
 .toast-capper {
     height: 0.3rem;
+}
+
+.bag-notification-wrapper {
+    height: 15%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 
