@@ -33,10 +33,14 @@
 
 #payment-form .form-control,
 #card-element {
-    color: var(--jetblack);
-    border: 1px solid var(--jetblack);
+  color: var(--jetblack);
+  border: 1px solid var(--jetblack);
 }
 
 #success-return-btn {
-    padding: 1rem;
+  padding: 1rem;
+}
+
+#success-return-row {
+  margin-top: 5%;
 }
