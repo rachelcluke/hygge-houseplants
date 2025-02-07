@@ -36,3 +36,7 @@
     color: var(--jetblack);
     border: 1px solid var(--jetblack);
 }
+
+#success-return-btn {
+    padding: 1rem;
+}
