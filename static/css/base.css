@@ -297,7 +297,7 @@ a.category-badge > span.badge:hover {
         padding-top: 4%;
     }
 
-    #products-page, #bag-page, #checkout-page, #page-order-confirmation, #page-login {
+    #products-page, #bag-page, #checkout-page, #page-order-confirmation, #page-login, #page-register {
         margin-top: 7%;
     }
 
