@@ -225,6 +225,60 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: var(--bluegray); /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: var(--black);
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: var(--polarwhite);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: var(--polarwhite);
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+.allauth-form-inner-content a {
+	color: var(--darkgreen); /* text-info */
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -233,6 +287,7 @@ a.category-badge > span.badge:hover {
   .container {
     max-width: 80%;
   }
+
 }
 
 /* Fixed top navbar only on medium and up */
@@ -242,7 +297,7 @@ a.category-badge > span.badge:hover {
         padding-top: 4%;
     }
 
-    #products-page, #bag-page, #checkout-page, #page-order-confirmation {
+    #products-page, #bag-page, #checkout-page, #page-order-confirmation, #page-login {
         margin-top: 7%;
     }
 
