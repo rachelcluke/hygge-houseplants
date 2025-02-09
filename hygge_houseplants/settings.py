@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     'https://8000-rachelcluke-hyggehousep-7s7z04x7b7l.ws.codeinstitute-ide.net',
     'ms4-hygge-houseplants.herokuapp.com',
     'ms4-hygge-houseplants-727aa19c949d.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'localhost',
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://localhost',
@@ -56,13 +57,13 @@ INSTALLED_APPS = [
     'hygge_houseplants',
     'home',
     'products',
-    'storages',
     'bag',
     'checkout',
     'profiles',
 
     # Other
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -118,8 +119,9 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -214,6 +216,29 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
+if 'USE_CLOUDINARY' in os.environ:
+    # Cache control
+    CL_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    CL_NAME = 'dscxtzaho'
+    CL_KEYNAME = 'cloudinary-hygge-houseplants-hf653n'
+    CL_API_KEY = os.environ.get('CL_API_KEY')
+    CL_SECRET = os.environ.get('CL_SECRET')
+    CL_CUSTOM_DOMAIN = f'cloudinary://{CL_API_KEY}:{CL_SECRET}@{CL_NAME}'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static_library'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media_library'
+
+    # Override static and media URLs in production
+    # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{CL_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 35
