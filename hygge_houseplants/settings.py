@@ -232,7 +232,7 @@ if 'USE_CLOUDINARY' in os.environ:
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'media_library/folders/static/static'
+    STATICFILES_LOCATION = 'media_library/folders/static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media_library/folders/media'
 
