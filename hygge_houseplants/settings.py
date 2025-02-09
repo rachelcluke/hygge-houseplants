@@ -232,12 +232,12 @@ if 'USE_CLOUDINARY' in os.environ:
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static_library'
+    STATICFILES_LOCATION = 'media_library/folders/static/static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media_library'
+    MEDIAFILES_LOCATION = 'media_library/folders/media'
 
     # Override static and media URLs in production
-    # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{CL_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe
