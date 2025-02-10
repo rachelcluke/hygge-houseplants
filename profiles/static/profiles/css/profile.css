@@ -19,3 +19,7 @@
 #id_default_country option:first-child {
     color: var(--bluegray);
 }
+
+.order-number {
+    text-decoration: none !important;
+}

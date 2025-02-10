@@ -6,11 +6,6 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -18,8 +13,7 @@
     <div class="container" id="page-profile">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
+                <h2 class="title text-lowercase mb-4">My Profile</h2>
                 <hr>
             </div>
         </div>
@@ -41,7 +35,6 @@
                             <tr>
                                 <th>Order Number</th>
                                 <th>Date</th>
-                                <th>Items</th>
                                 <th>Order Total</th>
                             </tr>
                         </thead>
@@ -50,17 +43,11 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
+                                        title="{{ order.order_number }}" class="text-decoration-none">
+                                            {{ order.order_number|truncatechars:10 }}
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
                                     <td>£{{ order.grand_total }}</td>
                                 </tr>
                             {% endfor %}
