@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
 import dj_database_url
 
 if os.path.isfile('env.py'):
@@ -221,12 +224,13 @@ if 'USE_CLOUDINARY' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
 
-    # Bucket Config
-    CL_NAME = 'dscxtzaho'
-    CL_KEYNAME = 'cloudinary-hygge-houseplants-hf653n'
-    CL_API_KEY = os.environ.get('CL_API_KEY')
-    CL_SECRET = os.environ.get('CL_SECRET')
-    CL_CUSTOM_DOMAIN = f'cloudinary://{CL_API_KEY}:{CL_SECRET}@{CL_NAME}'
+    # Configuration       
+    cloudinary.config ( 
+        CL_NAME = "dscxtzaho", 
+        CL_API_KEY = os.environ.get('CL_API_KEY'),
+        CL_SECRET = os.environ.get('CL_SECRET'),
+        secure=True
+    )
 
     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
@@ -235,8 +239,11 @@ if 'USE_CLOUDINARY' in os.environ:
     MEDIAFILES_LOCATION = 'media_library/folders/media'
 
     # Override static and media URLs in production
-    STATIC_URL = f'https://{CL_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{CL_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    # CL_CUSTOM_DOMAIN = f'cloudinary://{CL_API_KEY}:{CL_SECRET}@{CL_NAME}'
+    # STATIC_URL = f'https://{CL_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    # MEDIA_URL = f'https://{CL_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 35

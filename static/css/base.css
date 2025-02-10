@@ -301,6 +301,10 @@ a.category-badge > span.badge:hover {
         margin-top: 7%;
     }
 
+    #page-profile {
+        padding-top: 10%;
+    }
+
     .title {
         font-size: 3rem;
         padding-bottom: 1rem;
