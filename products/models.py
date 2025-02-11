@@ -4,14 +4,14 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Category(models.Model):
     """Category Class contains category name and category user friendly name."""
-    name = models.CharField(max_length=254)
-    user_friendly_name = models.CharField(max_length=254, null=True, blank=True)
-  
     class Meta:
         verbose_name_plural = 'Categories'
 
+    name = models.CharField(max_length=254)
+    user_friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
     def __str__(self):
-        """Method to return Cateogry name."""
+        """Method to return Category name."""
         return self.name
 
     def get_user_friendly_name(self):
