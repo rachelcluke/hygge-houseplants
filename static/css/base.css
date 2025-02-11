@@ -9,6 +9,7 @@
     --bluegray: #D5E0E9;
     --peach: #FEE1C8;
     --black: #101010;
+    --ruby: #9B111E;
     --font-gelasio: "Gelasio", sans-serif;
     --font-figtree: "Figtree", sans-serif;
     --font-hind: "Hind", sans-serif;
@@ -277,6 +278,34 @@ a.category-badge > span.badge:hover {
 
 .allauth-form-inner-content a {
 	color: var(--darkgreen); /* text-info */
+}
+
+/* Product Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: var(--ruby);
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: var(--ruby);
+    border-color: var(--ruby);
+    border-radius: 0;
 }
 
 
