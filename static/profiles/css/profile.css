@@ -1,0 +1,25 @@
+.order-history {
+    max-height: 25%; 
+    overflow-y: auto;
+}
+
+#profile-update-form .form-control {
+    color: var(--black);
+}
+
+#profile-update-form input::placeholder {
+    color: var(--bluegray);
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: var(--black);
+}
+
+#id_default_country option:first-child {
+    color: var(--bluegray);
+}
+
+.order-number {
+    text-decoration: none !important;
+}

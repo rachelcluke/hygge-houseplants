@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
+import cloudinary.api
+import cloudinary_storage
 from cloudinary.utils import cloudinary_url
 import dj_database_url
 
@@ -55,6 +57,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'django.contrib.sites',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'hygge_houseplants',
@@ -69,8 +74,16 @@ INSTALLED_APPS = [
     'storages',
 ]
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME':"dscxtzaho",
+    'API_KEY': os.environ.get('CL_API_KEY'),
+    'API_SECRET': os.environ.get('CL_SECRET'),
+}
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,7 +137,6 @@ SITE_ID = 1
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -135,14 +147,6 @@ WSGI_APPLICATION = 'hygge_houseplants.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# This is the old sqlite3 use for development environment
-# DATABASES = {
-# 'default': {
-# 'ENGINE': 'django.db.backends.sqlite3',
-# 'NAME': BASE_DIR / 'db.sqlite3',
-# }
-# }
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -195,7 +199,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+if DEBUG:
+    STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -216,34 +224,6 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-if 'USE_CLOUDINARY' in os.environ:
-    # Cache control
-    CL_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
-    }
-
-    # Configuration       
-    cloudinary.config ( 
-        CL_NAME = "dscxtzaho", 
-        CL_API_KEY = os.environ.get('CL_API_KEY'),
-        CL_SECRET = os.environ.get('CL_SECRET'),
-        secure=True
-    )
-
-    # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'media_library/folders/static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media_library/folders/media'
-
-    # Override static and media URLs in production
-    # CL_CUSTOM_DOMAIN = f'cloudinary://{CL_API_KEY}:{CL_SECRET}@{CL_NAME}'
-    # STATIC_URL = f'https://{CL_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    # MEDIA_URL = f'https://{CL_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
-
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 35
