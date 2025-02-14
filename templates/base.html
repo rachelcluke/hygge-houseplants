@@ -41,8 +41,7 @@
   <body>
     <header class="container-fluid fixed-top">
         {% include 'includes/main-nav.html' %}
-        <!-- TODO: Fix banner -->
-        <!-- {% include 'includes/banner.html' } -->
+        {% include 'includes/banner.html' %}
     </header>
 
     {% if messages %}
@@ -76,4 +75,5 @@
     {% endblock %}
 
     </body>
+    {% include 'includes/footer.html' %}
 </html>

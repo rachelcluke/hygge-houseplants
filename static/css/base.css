@@ -54,7 +54,6 @@ header {
     background-color: var(--darkgreen);
     color: var(--yellowgreen);
     padding-top: 2rem;
-    padding-bottom: 2rem;
     text-transform: uppercase;
 }
 
@@ -131,6 +130,10 @@ header {
     border: 1px solid var(--black);
 }
 
+.col-gap {
+    column-gap: 1rem;
+  }
+
 /*Launch Page*/
 
 .launch-title, .shop-collection-title, .company-reasons-title, .title {
@@ -149,6 +152,7 @@ header {
 
 .launch-02 {
     background-color: var(--polarwhite);
+    padding-left: 2rem;
 }
 
 .launch-03 {
@@ -156,7 +160,8 @@ header {
 }
 
 #banner {
-    background-color: var(--black);
+    background-color: var(--black) !important;
+    color: var(--polarwhite) !important;
     width: 100vw;
 }
 
@@ -174,6 +179,7 @@ header {
 }
 
 .category-caption {
+    font-family: var(--font-hind);
     font-size: 1.6rem;
     color: var(--black);
     white-space: nowrap;
@@ -308,6 +314,11 @@ a.category-badge > span.badge:hover {
     border-radius: 0;
 }
 
+footer, #footer {
+    background-color: var(--bluegray);
+    font-family: var(--font-figtree);
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -322,8 +333,22 @@ a.category-badge > span.badge:hover {
 /* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
 
+    .col-gap {
+        column-gap: 0rem;
+    }
+
+    .shop-collection-title {
+        padding-bottom: 1rem;
+    }
+
+    #banner {
+        margin-top: 1.5%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
     #launch-section{
-        padding-top: 4%;
+        padding-top: 9%;
     }
 
     #products-page, #bag-page, #checkout-page, #page-order-confirmation, #page-login, #page-register, #page-verification-sent {
@@ -341,6 +366,11 @@ a.category-badge > span.badge:hover {
 
     #product-sort-filter-row {
         padding-bottom: 4rem;
+    }
+
+    footer {
+        margin-left: -5%;
+        margin-right: -1.2%;
     }
     
 }
