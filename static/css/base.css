@@ -5,6 +5,7 @@
     --yellowgreen: #F8FFD2;
     --palegreen: #BCCEB5;
     --orange: #E7832D;
+    --darkpeach: #F8B173;
     --darkgreen: #25463F;
     --bluegray: #D5E0E9;
     --peach: #FEE1C8;
@@ -78,7 +79,7 @@ header {
 }
 
 .btn {
-    font-family: var(--font-hind);
+    font-family: var(--font-figtree);
 }
 
 .default-button {
@@ -103,7 +104,7 @@ header {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background-color: var(--orange);
+    background-color: var(--darkpeach);
     color: var(--black);
 }
 
@@ -143,7 +144,7 @@ header {
 
 .launch-01, .launch-02, .launch-03 {
     padding-top: 3%;
-    padding-bottom: 2%;
+    padding-bottom: 3%;
 }
 
 .launch-01 {
@@ -157,11 +158,40 @@ header {
 
 .launch-03 {
     background-color: var(--peach);
+    color: var(--darkgreen);
+    padding-left: 2rem;
+}
+
+#company-reasons-title {
+    padding-bottom: 5%;
+}
+
+#section-why-hygge-icons h3 {
+    padding-top: 10%;
+    font-family: var(--font-gelasio);
+}
+
+#section-why-hygge-icons p {
+    font-family: var(--font-figtree);
+}
+
+#section-why-hygge-icons i {
+    color: var(--darkgreen) !important; 
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+#section-why-hygge-icons {
+    font-size: 1.6rem;
+}
+
+#company-reasons-title {
+    padding-bottom: 5%;
 }
 
 #banner {
     background-color: var(--black) !important;
-    color: var(--polarwhite) !important;
+    color: var(--darkpeach) !important;
     width: 100vw;
 }
 
@@ -179,7 +209,8 @@ header {
 }
 
 .category-caption {
-    font-family: var(--font-hind);
+    font-family: var(--font-figtree);
+    font-weight: 200;
     font-size: 1.6rem;
     color: var(--black);
     white-space: nowrap;
@@ -207,6 +238,10 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+#carouselIndicators {
+    color: var(--darkgreen);
 }
 
 /* ------------------------------- Bootstrap Toasts */
@@ -347,16 +382,17 @@ footer, #footer {
         padding-bottom: 1rem;
     }
 
-    #launch-section{
+    #launch-section, #page-profile, #page-add-product {
         padding-top: 9%;
     }
 
-    #products-page, #bag-page, #checkout-page, #page-order-confirmation, #page-login, #page-register, #page-verification-sent {
-        margin-top: 7%;
+    #products-page, #bag-page, #checkout-page, #page-order-confirmation, 
+    #page-login, #page-register, #page-verification-sent, #product-info-page {
+        margin-top: 10%;
     }
 
-    #page-profile, #page-add-product {
-        padding-top: 10%;
+    #product-info-page {
+        margin-bottom: 5%;
     }
 
     .title {
@@ -368,9 +404,12 @@ footer, #footer {
         padding-bottom: 4rem;
     }
 
+    #carouselIndicators {
+        padding-top: 5%;
+    }
+
     footer {
         margin-left: -5%;
-        margin-right: -1.2%;
     }
     
 }
