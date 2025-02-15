@@ -133,7 +133,11 @@ header {
 
 .col-gap {
     column-gap: 1rem;
-  }
+}
+
+.row-gap{
+    padding-bottom: 1rem;
+}
 
 /*Launch Page*/
 
@@ -354,6 +358,11 @@ footer, #footer {
     font-family: var(--font-figtree);
 }
 
+#products-page img {
+    height: 25vh;
+    width: 15vw;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -370,6 +379,10 @@ footer, #footer {
 
     .col-gap {
         column-gap: 0rem;
+    }
+
+    .row-gap {
+        padding-bottom: 2rem;
     }
 
     .shop-collection-title {

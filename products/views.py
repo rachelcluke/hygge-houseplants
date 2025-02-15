@@ -15,6 +15,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    sale_products = None
 
 
     if request.GET:
@@ -28,6 +29,10 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
+
+        # To-do make sure it only shows products that are on sale
+        if 'sale' in request.GET:
+            sale_products = products.filter(sale__in=products)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -48,6 +53,7 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'sale_products:': sale_products,
         'current_categories': categories,
         'current_sorting': current_sorting,
     }

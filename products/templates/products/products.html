@@ -12,6 +12,8 @@
                     {% for c in current_categories %}
                         <h2 class="title text-lowercase">{{ c.user_friendly_name }}</h2>
                     {% endfor %}
+                {% elif sale_products %}
+                    <h2 class="title text-lowercase">Sale</h2>
                 {% else %}
                     <h2 class="title text-lowercase">Products</h2>
                 {% endif %}
@@ -28,8 +30,8 @@
             {% include 'includes/search-results.html' %}
         </div>
         <div class="row">
+            {% include 'includes/filters.html' %}
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">

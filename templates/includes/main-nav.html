@@ -21,14 +21,12 @@
             <a href="{% url 'products' %}?category=hanging_trailing" class="dropdown-item">Hanging & Trailing</a>
             <a href="{% url 'products' %}?category=foliage_fern" class="dropdown-item">Foliage & Fern</a>
             <a href="{% url 'products' %}?category=tropical" class="dropdown-item">Tropical</a>
-            <!-- TODO: Query sale items (product property)-->
-            <a href="" class="dropdown-item">SALE</a>
+            <a href="{% url 'products' %}?sale=True" class="dropdown-item">SALE</a>
         </div>
     </li>
     
-    <!-- TODO: replace href -->
     <li class="nav-item dropdown list-unstyled">
-        <a href="{% url 'home' %}" class="nav-link">
+        <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fplantsandpapers%2F" class="nav-link" target="_blank">
             <h2 class="my-0">Contact</h2>
         </a>
     </li>
@@ -51,8 +49,6 @@
             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-user fa-lg"></i></div>
-                    <!-- TODO: Change bottom text to be username (if logged in) -->
-                    <!--<p class="my-0">My Account</p>-->
                 </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
