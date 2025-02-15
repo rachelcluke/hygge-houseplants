@@ -400,12 +400,20 @@ footer, #footer {
     }
 
     #products-page, #bag-page, #checkout-page, #page-order-confirmation, 
-    #page-login, #page-register, #page-verification-sent, #product-info-page {
+    #page-login, #page-register, #page-verification-sent, #product-info-page, #page-logout {
         margin-top: 10%;
     }
 
-    #product-info-page {
+    #product-info-page{
         margin-bottom: 5%;
+    }
+
+    #page-register, #page-logout {
+        padding-bottom: 10%;
+    }
+
+    #page-login {
+        padding-bottom: 20%;
     }
 
     .title {
