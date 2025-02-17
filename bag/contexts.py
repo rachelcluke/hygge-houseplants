@@ -4,6 +4,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 def bag_contents(request):
+    """Request bag items, grand total, free delivery threshold"""
 
     bag_items = []
     total = 0

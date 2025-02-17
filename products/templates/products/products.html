@@ -30,7 +30,7 @@
             {% include 'includes/search-results.html' %}
         </div>
         <div class="row">
-            {% include 'includes/filters.html' %}
+            <!--{% include 'includes/filters.html' %}-->
             <div class="product-container col-10 offset-1">
                 <div class="row">
                     {% for product in products %}
@@ -122,6 +122,27 @@
                 currentUrl.searchParams.delete("sort");
                 currentUrl.searchParams.delete("direction");
 
+                window.location.replace(currentUrl);
+            }
+        })
+
+        $('.icheck').change(function() {
+
+            var selectedValues = $('.icheck:checked').map(function() {
+                return $(this).val();
+            }).get();
+            var currentUrl = new URL(window.location);
+
+            console.log(selectedValues);
+
+            // selectedValues.forEach(value => { currentUrl.searchParams.append("filter", value); });
+            
+            if(selectedValues.length > 0) {
+                console.log("Request: ", request.GET["filter"]);
+                currentUrl.searchParams.set("filter", selectedValues.join(","));
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("filter");
                 window.location.replace(currentUrl);
             }
         })

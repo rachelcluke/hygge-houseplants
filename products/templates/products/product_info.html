@@ -25,18 +25,37 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.product_name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                    <!-- Product Rating -->
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
-                    {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                        </small>
-                    {% endif %}
+                    <!-- Product Description -->
                     <p class="mt-3">{{ product.product_description }}</p>
+                    <div class="mb-0">
+                        <!-- Product Care Level -->
+                        {% if product.care_ref %}
+                            <small class="text-muted"><i class="fa-solid fa-hand-holding-heart"></i></small>
+                            <small id="product-care-info" class="text-muted" data-care={{product.care_ref}}> {{ product.care_ref }}</small>
+                        {% endif %}
+                        <!-- Product Light Level -->
+                        {% if product.light_ref %}
+                            <small class="text-muted ml-4"><i class="fa-regular fa-lightbulb"></i></small>
+                            <small id="product-light-info" class="text-muted" data-light={{product.light_ref}}> {{ product.light_ref }}</small>
+                        {% endif %}
+                        <!-- Product Pet Friendly -->
+                        {% if product.pet_friendly %}
+                            <small class="text-muted ml-4"><i class="fa-solid fa-paw"></i> Pet-friendly </small>
+                        {% endif %}
+                        <!-- Admin Features -->
+                        {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                        {% endif %}
+                    </div>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -83,6 +102,37 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
+    <script type="text/javascript">
+        var care_ref = document.getElementById('product-care-info');
+        var care_ref_text = care_ref.textContent
+        var light_ref = document.getElementById('product-light-info');
+        var light_ref_text = light_ref.textContent
+
+        if (care_ref) {
+            if (care_ref_text.includes("low_care")) {
+                care_ref.textContent="Unkillable";
+            }
+            if (care_ref_text.includes("medium_care")) {
+                care_ref.textContent="Easy to take care";
+            }
+            if (care_ref_text.includes("high_care")) {
+                care_ref.textContent="Needs a lot of TLC";
+            }
+        }
+
+        if (light_ref) {
+            if (light_ref_text.includes("low_light")) {
+                light_ref.textContent="Happy in low light/ shade";
+            }
+            if (light_ref_text.includes("medium_light")) {
+                light_ref.textContent="Happy in indirect light";
+            }
+            if (light_ref_text.includes("high_light")) {
+                light_ref.textContent="Happy in direct sunlight";
+            }
+        }
+
+    </script>
 {% endblock %}

@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+from .models import Product, Category, Care, Light
 from .forms import ProductForm
 
 def all_products(request):
@@ -16,6 +16,7 @@ def all_products(request):
     sort = None
     direction = None
     sale_products = None
+    # filter = None
 
 
     if request.GET:
@@ -29,6 +30,14 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
+
+        """
+        if 'filter' in request.GET:
+            filters = request.GET['filter'].split(',')
+            filters = Q(care_ref__in=products) | Q(light_ref__in=products) | Q(pet_friendly__in=products)
+            print(filters)
+        products = products.filter(filters)
+        """ 
 
         # To-do make sure it only shows products that are on sale
         if 'sale' in request.GET:

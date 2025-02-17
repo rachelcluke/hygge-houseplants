@@ -225,6 +225,10 @@ header {
     color: var(--black);
 }
 
+#sort-select-section {
+    font-size: 2rem !important;
+}
+
 a.category-badge > span.badge:hover {
     background: var(--black) !important;
     color: var(--polarwhite) !important;

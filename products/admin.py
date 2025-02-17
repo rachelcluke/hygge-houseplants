@@ -3,6 +3,7 @@ from .models import Category, Care, Light, Product, Discount
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """ Product Admin Model to set list display"""
     list_display = (
         'category_ref',
         'product_name',
@@ -18,6 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Category Admin Model to set list display """
     list_display = (
         'user_friendly_name',
         'name',
