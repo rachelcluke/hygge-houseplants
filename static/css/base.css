@@ -58,6 +58,10 @@ header {
     text-transform: uppercase;
 }
 
+.strikethrough {
+    text-decoration: Line-Through;
+}
+
 .nav-link {
     color: var(--yellowgreen);
     font-family: var(--font-figtree);
@@ -360,6 +364,14 @@ a.category-badge > span.badge:hover {
 footer, #footer {
     background-color: var(--bluegray);
     font-family: var(--font-figtree);
+}
+
+.product-name {
+    font-size: 3rem;
+}
+
+.product-price{
+    font-size: 2rem;
 }
 
 #products-page img {

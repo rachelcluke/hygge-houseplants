@@ -11,6 +11,7 @@ def all_products(request):
     """ A view to show all products, including sort and search queries """
 
     products = Product.objects.all()
+    category_list = Category.objects.all()
     query = None
     categories = None
     sort = None
@@ -35,18 +36,18 @@ def all_products(request):
         if 'filter' in request.GET:
             filters = request.GET['filter'].split(',')
             filters = Q(care_ref__in=products) | Q(light_ref__in=products) | Q(pet_friendly__in=products)
-            print(filters)
         products = products.filter(filters)
         """ 
 
         # To-do make sure it only shows products that are on sale
         if 'sale' in request.GET:
-            sale_products = products.filter(sale__in=products)
+            sale_products = Product.objects.filter(sale__in=products)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category_ref__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+            sale_products = products.filter(sale__in=products)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -65,6 +66,7 @@ def all_products(request):
         'sale_products:': sale_products,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'category_list': category_list,
     }
 
     return render(request, 'products/products.html', context)
