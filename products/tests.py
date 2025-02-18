@@ -66,7 +66,7 @@ class TestModels(TestCase):
     
     def test_product_model(self):
         """ Test product model """
-        product = Product.objects.create(product_name='Product Test')
+        product = Product.objects.create(product_name='Product Test', product_description='x', price='1.00')
         self.assertTrue(product)
 
 
