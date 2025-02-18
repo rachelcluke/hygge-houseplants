@@ -68,6 +68,11 @@ class TestModels(TestCase):
         """ Test product model """
         product = Product.objects.create(product_name='Product Test', product_description='x', price='1.00')
         self.assertTrue(product)
+    
+    def test_care_model(self):
+        """ Test caremodel """
+        care = Care.objects.create(name='Care Test')
+        self.assertTrue(care)
 
 
 
