@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.test.client import Client
 from .forms import ProductForm
-from .models import Product
+from .models import Product, Category, Light, Care, Discount
 
 class TestProductForm(TestCase):
     """ Test Form in Products App """
@@ -18,13 +18,6 @@ class TestProductForm(TestCase):
         """ Test Product Form instance meta fields """
         form = ProductForm()
         self.assertEqual(form.Meta.fields, '__all__')
-
-
-class TestModels(TestCase):
-    """ Test Models in Products App """
-    def test_done_defaults_to_false(self):
-        item = Item.objects.create(name='Test Todo Item')
-        self.assertFalse(item.done)
 
 
 class TestViews(TestCase):
@@ -62,3 +55,22 @@ class TestViews(TestCase):
         response = self.client.get(f'/products/edit/{product.id}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/edit_product.html')
+
+
+class TestModels(TestCase):
+    """ Test Category, Product, Care, Light& Discount Models in Products App """
+    def test_category_model(self):
+        """ Test category model """
+        category = Category.objects.create(name='Category Test')
+        self.assertTrue(category)
+    
+    def test_product_model(self):
+        """ Test product model """
+        product = Product.objects.create(product_name='Product Test')
+        self.assertTrue(product)
+
+
+
+
+
+
