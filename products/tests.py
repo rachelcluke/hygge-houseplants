@@ -71,7 +71,7 @@ class TestModels(TestCase):
     
     def test_care_model(self):
         """ Test caremodel """
-        care = Care.objects.create(name='Care Test')
+        care = Care.objects.create(care_name='Care Test')
         self.assertTrue(care)
 
 
