@@ -53,3 +53,10 @@ class TestCheckoutModels(TestCase):
         """ Test Order model """
         testorder = Order.objects.create(order_number=000, full_name='Yasmin Oh', phone_number = 29248, country='United Kingdom', town_or_city='x', street_address1='x' )
         self.assertTrue(testorder)
+    
+    def test_order_line_model(self):
+        """ Test Order Line Items model """
+        testOrder = Order.objects.create(order_number=000, full_name='Yasmin Oh', phone_number = 29248, country='United Kingdom', town_or_city='x', street_address1='x' )
+        testProduct = Product.objects.create(product_name='Test Product', product_description='x', price='2.00')
+        test_orderLineItem = OrderLineItem.objects.create(order=testOrder, product=testProduct, quantity=1)
+        self.assertTrue(test_orderLineItem)
