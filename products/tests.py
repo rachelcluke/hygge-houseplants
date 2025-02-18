@@ -70,9 +70,14 @@ class TestModels(TestCase):
         self.assertTrue(product)
     
     def test_care_model(self):
-        """ Test caremodel """
+        """ Test care model """
         care = Care.objects.create(care_name='Care Test')
         self.assertTrue(care)
+    
+    def test_light_model(self):
+        """ Test light model """
+        light = Light.objects.create(light_name='Light Test')
+        self.assertTrue(light)
 
 
 
