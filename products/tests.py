@@ -81,7 +81,7 @@ class TestModels(TestCase):
     
     def test_discount_model(self):
         """ Test discount model """
-        discount = Discount.objects.create(code='x', discount_description='x', validity_start='', validity_end='',)
+        discount = Discount.objects.create(code='x', discount_description='x', validity_start='2025-02-18 00:00:00', validity_end='2026-02-18 00:00:00',)
         self.assertTrue(discount)
 
 
