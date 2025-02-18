@@ -36,6 +36,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/product_info.html')
 
+    # TODO - resolve
     def test_get_add_product_page(self):
         """ Test add_product.html view """
         # superadmin credentials
@@ -47,6 +48,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/add_product.html')
 
+    # TODO - resolve
     def test_get_edit_product_page(self):
         """ Test edit_product.html view """
         # superadmin credentials
@@ -59,7 +61,8 @@ class TestViews(TestCase):
         response = self.client.get(f'/products/edit/{product.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/edit_product.html')
-    
+
+    # TODO - resolve 
     def test_get_delete_product_page(self):
         """ Test delete_product goes back to home view """
         # superadmin credentials

@@ -14,7 +14,7 @@ class LoginTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 """
 
-
+# TODO - resolve
 class TestViews(TestCase):
     """ Test Views in Profiles App """
 
