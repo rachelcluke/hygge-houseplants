@@ -1,18 +1,19 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .forms import UserProfileForm
+from .models import UserProfile
 
 
 class TestUserProfileForm(TestCase):
-    """ Test UserProfileForm in Profiles App """
+    """ Test Form in Profiles App """
 
-    def test_user_profile_form(self):
-        """ Test Product Form instance is valid """
+    def test__name_is_required(self):
+        """ Test UserProfile form """
         form = UserProfileForm({})
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
 
 
-class TestViews(TestCase):
+class TestUserProfileViews(TestCase):
     """ Test Views in Profiles App """
 
     def setUp(self):
@@ -26,3 +27,11 @@ class TestViews(TestCase):
         response = self.client.get('/profile/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response,'profiles/profile.html')
+
+class TestUserProfileModels(TestCase):
+    """ Test UserProfile Models in Profiles App """
+    def test_user_profile_model(self):
+        """ Test UserProfile model """
+        newuser = User.objects.create_user(username="newUser", password="myPassword", email="test10@test.com")
+        userprofile = UserProfile.objects.get(user_id=newuser.id)
+        self.assertTrue(userprofile)
