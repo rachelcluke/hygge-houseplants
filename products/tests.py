@@ -78,6 +78,11 @@ class TestModels(TestCase):
         """ Test light model """
         light = Light.objects.create(light_name='Light Test')
         self.assertTrue(light)
+    
+    def test_discount_model(self):
+        """ Test discount model """
+        discount = Discount.objects.create(code='x')
+        self.assertTrue(discount)
 
 
 
