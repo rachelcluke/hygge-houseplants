@@ -1,5 +1,15 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
+from .forms import UserProfileForm
+
+
+class TestUserProfileForm(TestCase):
+    """ Test UserProfileForm in Profiles App """
+
+    def test_user_profile_form(self):
+        """ Test Product Form instance is valid """
+        form = UserProfileForm({})
+        self.assertTrue(form.is_valid())
 
 
 class TestViews(TestCase):
