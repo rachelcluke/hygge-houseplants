@@ -1,6 +1,5 @@
 .order-history {
-    max-height: 25%; 
-    overflow-y: auto;
+    max-height: 50%; 
 }
 
 #profile-update-form .form-control {
@@ -22,4 +21,17 @@
 
 .order-number {
     text-decoration: none !important;
+}
+
+/* S screens */
+@media (max-width: 768px) { 
+    .category-badge-section {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    
 }

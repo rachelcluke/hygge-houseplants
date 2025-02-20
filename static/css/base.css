@@ -446,7 +446,7 @@ footer, #footer {
         padding-bottom: 10%;
     }
 
-    #product-info-page, #page-add-product, #page-edit-product {
+    #product-info-page, #page-add-product, #page-edit-product, #page-profile {
         padding-top: 5%;
         padding-bottom: 5%;
     }
@@ -470,7 +470,7 @@ footer, #footer {
     
 }
 
-/* Ss screens */
+/* S screens */
 @media (max-width: 428px) { 
     .category-badge-section {
         padding: 2rem;
