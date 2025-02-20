@@ -81,6 +81,10 @@ header {
     font-weight: 600;
 }
 
+.text-nowrap {
+    white-space: normal !important;
+}
+
 .btn {
     font-family: var(--font-figtree);
 }
@@ -158,6 +162,11 @@ header i:hover {
 .launch-title, .shop-collection-title, .company-reasons-title, .title {
     font-family: var(--font-gelasio);
     color: var(--darkgreen);
+}
+
+.title-row {
+    padding-top: 3%;
+    padding-bottom: 2%;
 }
 
 .launch-01, .launch-02, .launch-03 {
@@ -388,14 +397,15 @@ footer, #footer {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
+
   
 
 }
 
-/* Fixed top navbar only on medium and up */
+/* L screens */
 @media (min-width: 992px) {
 
     .col-l-gap {
@@ -432,7 +442,7 @@ footer, #footer {
         padding-bottom: 1rem;
     }
 
-    #page-register, #page-logout {
+    #page-register, #page-logout, #products-page {
         padding-bottom: 10%;
     }
 
@@ -452,6 +462,12 @@ footer, #footer {
     #carouselIndicators {
         padding-top: 5%;
     }
-
     
+}
+
+/* Ss screens */
+@media (max-width: 428px) { 
+    .category-badge-section {
+        padding: 2rem;
+    }
 }
