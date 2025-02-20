@@ -38,11 +38,6 @@
     <title>Hygge Houseplants {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top">
-        {% include 'includes/main-nav.html' %}
-        {% include 'includes/banner.html' %}
-    </header>
-
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -62,6 +57,8 @@
     {% endif %}
 
     {% block page_header %}
+        {% include 'includes/main-nav.html' %}
+        {% include 'includes/banner.html' %}
     {% endblock %}
 
     {% block content %}

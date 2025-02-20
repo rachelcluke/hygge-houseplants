@@ -21,6 +21,7 @@ html {
     scroll-padding-top: 2rem;
     font-size: 62.5%;
     height: 100%;
+    overflow-x: hidden; 
 }
 
 body {
@@ -43,8 +44,6 @@ body {
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
 }
 
 .hidden {
@@ -68,6 +67,10 @@ header {
     font-weight: 300;
 }
 
+#icon-bag {
+    color: var(--yellowgreen);
+}
+
 .nav-link:hover {
     color: var(--polarwhite);
 }
@@ -76,10 +79,6 @@ header {
     text-transform: uppercase;
     font-family: var(--font-figtree);
     font-weight: 600;
-}
-
-.main-logo-link {
-    width: fit-content;
 }
 
 .btn {
@@ -143,7 +142,18 @@ header {
     padding-bottom: 1rem;
 }
 
-/*Launch Page*/
+.bag-caption {
+    font-size: 1rem;
+    color: var(--black) !important;
+}
+
+header i {
+    color: var(--yellowgreen);
+}
+
+header i:hover {
+    opacity: 50%;
+}
 
 .launch-title, .shop-collection-title, .company-reasons-title, .title {
     font-family: var(--font-gelasio);
@@ -381,6 +391,7 @@ footer, #footer {
   .container {
     max-width: 80%;
   }
+  
 
 }
 
@@ -399,6 +410,11 @@ footer, #footer {
         padding-bottom: 2rem;
     }
 
+    #search-bar {
+        padding-left: 20%;
+        width: 130%;
+    }
+
     .shop-collection-title {
         padding-bottom: 4rem;
     }
@@ -412,23 +428,8 @@ footer, #footer {
     }
 
     #banner {
-        margin-top: 1.5%;
         padding-top: 1rem;
         padding-bottom: 1rem;
-    }
-
-
-    #launch-section, #page-profile, #page-add-product {
-        padding-top: 9%;
-    }
-
-    #products-page, #bag-page, #checkout-page, #page-order-confirmation, 
-    #page-login, #page-register, #page-verification-sent, #product-info-page, #page-logout {
-        margin-top: 10%;
-    }
-
-    #product-info-page{
-        margin-bottom: 5%;
     }
 
     #page-register, #page-logout {
