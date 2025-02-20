@@ -59,7 +59,7 @@ class TestViews(TestCase):
 class TestModels(TestCase):
     """ Test Category, Product, Care, Light& Discount Models in Products App """
     def test_category_model(self):
-        """ Test category model """
+        """ Test category model instance """
         category = Category.objects.create(name='Category Test')
         self.assertTrue(category)
     
@@ -69,7 +69,7 @@ class TestModels(TestCase):
         self.assertEqual(str(category), 'CTN')
 
     def test_product_model(self):
-        """ Test Product model """
+        """ Test Product model instance """
         product = Product.objects.create(product_name='Product Test', product_description='x', price='1.00')
         self.assertTrue(product)
 
@@ -79,7 +79,7 @@ class TestModels(TestCase):
         self.assertEqual(str(product), 'Product Name')
     
     def test_care_model(self):
-        """ Test care model """
+        """ Test care model instance """
         care = Care.objects.create(care_name='Care Test')
         self.assertTrue(care)
     
@@ -89,7 +89,7 @@ class TestModels(TestCase):
         self.assertEqual(str(care), 'Care Name')
     
     def test_light_model(self):
-        """ Test light model """
+        """ Test light model instance """
         light = Light.objects.create(light_name='Light Test')
         self.assertTrue(light)
     
@@ -99,7 +99,7 @@ class TestModels(TestCase):
         self.assertEqual(str(light), 'Light Name')
     
     def test_discount_model(self):
-        """ Test discount model """
+        """ Test discount model instance """
         discount = Discount.objects.create(code='x', discount_description='x', validity_start='2025-02-18 00:00:00', validity_end='2026-02-18 00:00:00',)
         self.assertTrue(discount)
     
