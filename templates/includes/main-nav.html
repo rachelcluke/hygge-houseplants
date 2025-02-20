@@ -1,18 +1,18 @@
 <header class="row" id="main-nav">
-    <div class="col-3 ext-center text-lg-left">
+    <div class="col-12 col-md-3 ext-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="logo-font">HYGGE HOUSEPLANTS</h2>
         </a>
     </div>
 
-    <div class="col-1">
+    <div class="col-4 col-md-1">
         <li class="nav-item dropdown list-unstyled">
             <a href="{% url 'home' %}" class="nav-link">
                 <h2>Home</h2>
             </a>
         </li>
     </div>
-    <div class="col-1">
+    <div class="col-4 col-md-1">
         <li class="nav-item dropdown list-unstyled">
             <a class="nav-link" href="{% url 'products' %}" id="shop-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <h2>Shop</h3>
@@ -23,18 +23,17 @@
                 <a href="{% url 'products' %}?category=hanging_trailing" class="dropdown-item">Hanging & Trailing</a>
                 <a href="{% url 'products' %}?category=foliage_fern" class="dropdown-item">Foliage & Fern</a>
                 <a href="{% url 'products' %}?category=tropical" class="dropdown-item">Tropical</a>
-                <!--<a href="{% url 'products' %}?sale=true" class="dropdown-item">SALE</a>-->
             </div>
         </li>
     </div>
-    <div class="col-1">
+    <div class="col-4 col-md-1">
         <li class="nav-item dropdown list-unstyled">
             <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fplantsandpapers%2F" class="nav-link" target="_blank">
                 <h2>Contact</h2>
             </a>
         </li>
     </div>
-    <div class="col-3">
+    <div class="col-12 col-md-3">
         <form method="GET" action="{% url 'products' %}">
             <div class="input-group" id="search-bar">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
@@ -49,7 +48,7 @@
         </form>
     </div>
     <ul class="list-inline list-unstyled text-center text-lg-right">
-        <li class="col-1 col-l-gap list-inline-item dropdown" id="icon-user">
+        <li class="col-6 col-md-1 col-l-gap list-inline-item dropdown" id="icon-user">
             <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div><i class="fas fa-user fa-lg text-center"></i></div>
             </a>
@@ -66,7 +65,7 @@
                 {% endif %}
             </div>
         </li>
-        <li class="col-1 list-inline-item"  id="icon-bag">
+        <li class="col-3 col-md-1 list-inline-item"  id="icon-bag">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="{% url 'view_bag' %}">
                 <span>
                     <i class="fas fa-shopping-bag fa-lg">
