@@ -346,6 +346,11 @@ a.category-badge > span.badge:hover {
 	color: var(--darkgreen); /* text-info */
 }
 
+#page-logout{
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+
 /* Product Form */
 
 .btn-file {
@@ -442,7 +447,8 @@ footer, #footer {
         padding-bottom: 1rem;
     }
 
-    #page-register, #page-logout, #products-page {
+
+    #page-register, #products-page {
         padding-bottom: 10%;
     }
 
