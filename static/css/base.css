@@ -446,8 +446,12 @@ footer, #footer {
         padding-bottom: 10%;
     }
 
-    #product-info-page, #page-add-product, #page-edit-product, #page-profile {
+    #product-info-page, #page-add-product, #page-edit-product, #page-profile, #bag-page {
         padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    #delivery-banner {
         padding-bottom: 5%;
     }
 
@@ -474,5 +478,9 @@ footer, #footer {
 @media (max-width: 428px) { 
     .category-badge-section {
         padding: 2rem;
+    }
+
+    #bag-page p {
+        font-size: 2rem;
     }
 }
