@@ -452,7 +452,7 @@ footer, #footer {
         padding-bottom: 10%;
     }
 
-    #product-info-page, #page-add-product, #page-edit-product, #page-profile, #bag-page {
+    #product-info-page, #page-add-product, #page-edit-product, #page-profile, #bag-page, #checkout-page, #page-order-confirmation {
         padding-top: 5%;
         padding-bottom: 5%;
     }
