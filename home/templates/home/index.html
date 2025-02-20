@@ -7,7 +7,7 @@
 {% block content %}
     <div class="container-fluid h-100" id="launch-section">
         <div class="row h-100 launch-01">
-            <div class="col-7 col-md-6 my-auto">
+            <div class="col-12 my-auto">
                 <h1 class="display-1 launch-title">
                     Plants Make<br>People Happy
                 </h1>
@@ -17,63 +17,61 @@
             </div>
         </div>
         <div class="row launch-02">
-            <h2 class="display-4 shop-collection-title">
+            <h2 class="display-4 col-12 text-center shop-collection-title">
                 shop by collection
             </h2>
-            <div class="row col-gap h-100 w-100">
-                <div class="col-12 col-lg-3 col-sm-6 my-auto py-1 py-lg-0 my-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-2 offset-lg-1 my-auto py-1 my-5">
                     <img src="{% static 'img/cacti_succ.jpg' %}" alt="Succulents" class="category-img">
                     <a href="{% url 'products' %}?category=cacti_succulents" class="category-caption text-uppercase py-3">Cacti & Succulents</a>
                 </div>
-                <div class="col-12 col-lg-3 col-sm-6 my-auto py-1 py-lg-0 my-5">
+                <div class="col-12 col-sm-6 col-lg-2 offset-lg-1 my-auto py-1 my-5">
                     <img src="/static/img/hanging.jpg" alt="Hanging plants" class="category-img">
                     <a href="{% url 'products' %}?category=hanging_trailing" class="category-caption text-uppercase py-3">Hanging & Trailing</a>
                 </div>
-                <div class="col-12 col-lg-3 col-sm-6 my-auto py-1 py-lg-0 my-5">
+                <div class="col-12 col-sm-6 col-lg-2 offset-lg-1 my-auto py-1 my-5">
                     <img src="/static/img/foliage.jpg" alt="Zoomed in foliage" class="category-img">
                     <a href="{% url 'products' %}?category=foliage_fern" class="category-caption text-uppercase py-3"> Foliage & Ferns </a>
                 </div>
-                <div class="col-12 col-lg-3 col-sm-6 my-auto py-1 py-lg-0 my-5">
+                <div class="col-12 col-sm-6 col-lg-2 offset-lg-1  my-auto py-1 my-5">
                     <img src="/static/img/tropical.jpg" alt="Tropical plants" class="category-img">
                     <a href="{% url 'products' %}?category=tropical" class="category-caption text-uppercase py-3">Tropical Plants</a>
                 </div>
             </div>
         </div>
-        <div class="row launch-03">
-            <div class="col-7 col-md-6 my-auto">
-                <div class="row text-center" id="company-reasons-title">
-                    <h2 class="display-4 title">
-                        why hygge houseplants?
-                    </h2>
+        <div class="row launch-03 text-center">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center" id="company-reasons-title">
+                <h2 class="display-4 title">
+                    why hygge houseplants?
+                </h2>
+            </div>
+            <div class="row" id="section-why-hygge-icons">
+                <div class="col-12 col-sm-12 col-md-4 col-l-gap">
+                    <span class="icon" id="icon-leaf">
+                        <i class="fa-brands fa-pagelines"></i>
+                    </span>
+                    <h3>the plant folk</h3>
+                    <p class="text-justify">We're proud of our talented team of plant folk working from our nursery, 
+                        dedicating time to caring for your plants - 
+                        ensuring they arrive fresh & healthy.</p>
                 </div>
-                <div class="row" id="section-why-hygge-icons">
-                    <div class="col-sm-4 col-gap">
-                        <span class="icon" id="icon-leaf">
-                            <i class="fa-brands fa-pagelines"></i>
-                        </span>
-                        <h3>the plant folk</h3>
-                        <p>We're proud of our talented team of plant folk working from our nursery, 
-                            dedicating time to caring for your plants - 
-                            ensuring they arrive fresh & healthy.</p>
-                    </div>
-                    <div class="col-sm-4 col-gap">
-                        <span class="icon" id="icon-heart">
-                            <i class="fa-solid fa-hand-holding-heart"></i>
-                        </span>
-                        <h3>happiness guaranteed</h3>
-                        <p>Nothing makes us happier than making you happy! 
-                            Which is why if your order arrives looking far from fresh, 
-                            we'll replace it for you for free, within 30 days.</p>
-                    </div>
-                    <div class="col-sm-4 col-gap">
-                        <span class="icon" id="icon-recycle">
-                            <i class="fa-solid fa-recycle"></i>
-                        </span>
-                        <h3>sustainability first</h3>
-                        <p>Just like you, we're on a journey to protect our planet! 
-                            We're proud that 100% of our packaging is sustainable, 
-                            and we continue to make changes to how we work.</p>
-                    </div>
+                <div class="col-12 col-sm-12 col-md-4">
+                    <span class="icon" id="icon-heart">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </span>
+                    <h3>happiness guaranteed</h3> 
+                    <p class="text-justify">Nothing makes us happier than making you happy! 
+                        Which is why if your order arrives looking far from fresh, 
+                        we'll replace it for you for free, within 30 days.</p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-r-gap">
+                    <span class="icon" id="icon-recycle">
+                        <i class="fa-solid fa-recycle"></i>
+                    </span>
+                    <h3>sustainability first</h3>
+                    <p class="text-justify">Just like you, we're on a journey to protect our planet! 
+                        We're proud that 100% of our packaging is sustainable, 
+                        and we continue to make changes to how we work.</p>
                 </div>
             </div>
         </div>

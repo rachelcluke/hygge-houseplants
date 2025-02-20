@@ -161,21 +161,14 @@ header {
 
 .launch-02 {
     background-color: var(--polarwhite);
-    padding-left: 2rem;
 }
 
 .launch-03 {
     background-color: var(--peach);
     color: var(--darkgreen);
-    padding-left: 2rem;
-}
-
-#company-reasons-title {
-    padding-bottom: 5%;
 }
 
 #section-why-hygge-icons h3 {
-    padding-top: 10%;
     font-family: var(--font-gelasio);
 }
 
@@ -186,15 +179,15 @@ header {
 #section-why-hygge-icons i {
     color: var(--darkgreen) !important; 
     font-size: 2.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 }
 
 #section-why-hygge-icons {
     font-size: 1.6rem;
 }
 
-#company-reasons-title {
-    padding-bottom: 5%;
+.shop-collection-title ,#company-reasons-title {
+    padding-bottom: 3%;
 }
 
 #banner {
@@ -393,8 +386,12 @@ footer, #footer {
 /* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
 
-    .col-gap {
-        column-gap: 0rem;
+    .col-l-gap {
+        padding-left: 5rem;
+    }
+
+    .col-r-gap {
+        padding-right: 5rem;
     }
 
     .row-gap {
@@ -402,7 +399,15 @@ footer, #footer {
     }
 
     .shop-collection-title {
-        padding-bottom: 1rem;
+        padding-bottom: 4rem;
+    }
+
+    #section-why-hygge-icons i {
+        font-size: 5rem;
+    }
+
+    #section-why-hygge-icons h3 {
+        padding-top: 10%;
     }
 
     #banner {
@@ -410,6 +415,7 @@ footer, #footer {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+
 
     #launch-section, #page-profile, #page-add-product {
         padding-top: 9%;
@@ -445,8 +451,5 @@ footer, #footer {
         padding-top: 5%;
     }
 
-    footer {
-        margin-left: -5%;
-    }
     
 }
