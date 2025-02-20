@@ -220,10 +220,11 @@ header {
 #sort-dropdown {
     background-color: var(--polarwhite);
     color: var(--black);
+    font-size: 4rem;
 }
 
-#sort-select-section {
-    font-size: 2rem !important;
+#sort-selector {
+    font-size: 1.6rem !important;
 }
 
 a.category-badge > span.badge:hover {
