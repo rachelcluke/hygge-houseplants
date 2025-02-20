@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from django.test.client import Client
 from .forms import ProductForm
 from .models import Product, Category, Light, Care, Discount
 
@@ -64,25 +63,50 @@ class TestModels(TestCase):
         category = Category.objects.create(name='Category Test')
         self.assertTrue(category)
     
+    def test_category_string_method_returns_name(self):
+        """ Test Category string method returns name """
+        category = Category.objects.create(name='CTN', user_friendly_name='Category Test Name')
+        self.assertEqual(str(category), 'CTN')
+
     def test_product_model(self):
-        """ Test product model """
+        """ Test Product model """
         product = Product.objects.create(product_name='Product Test', product_description='x', price='1.00')
         self.assertTrue(product)
+
+    def test_product_string_method_returns_name(self):
+        """ Test Product string method returns product name """
+        product = Product.objects.create(product_name='Product Name', product_description='x', price='1.00')
+        self.assertEqual(str(product), 'Product Name')
     
     def test_care_model(self):
         """ Test care model """
         care = Care.objects.create(care_name='Care Test')
         self.assertTrue(care)
     
+    def test_care_string_method_returns_name(self):
+        """ Test Care string method returns care level name """
+        care = Care.objects.create(care_name='Care Name')
+        self.assertEqual(str(care), 'Care Name')
+    
     def test_light_model(self):
         """ Test light model """
         light = Light.objects.create(light_name='Light Test')
         self.assertTrue(light)
     
+    def test_light_string_method_returns_name(self):
+        """ Test Light string method returns light level name """
+        light = Light.objects.create(light_name='Light Name')
+        self.assertEqual(str(light), 'Light Name')
+    
     def test_discount_model(self):
         """ Test discount model """
         discount = Discount.objects.create(code='x', discount_description='x', validity_start='2025-02-18 00:00:00', validity_end='2026-02-18 00:00:00',)
         self.assertTrue(discount)
+    
+    def test_discount_string_method_returns_name(self):
+        """ Test Discount string method returns discount code """
+        discount = Discount.objects.create(code='DISCOUNT', discount_description='x', validity_start='2025-02-18 00:00:00', validity_end='2026-02-18 00:00:00',)
+        self.assertEqual(str(discount), 'DISCOUNT')
 
 
 

@@ -17,8 +17,7 @@ def all_products(request):
     sort = None
     direction = None
     sale_products = None
-    # filter = None
-
+    
 
     if request.GET:
         if 'sort' in request.GET:
@@ -39,7 +38,6 @@ def all_products(request):
         products = products.filter(filters)
         """ 
 
-        # To-do make sure it only shows products that are on sale
         if 'sale' in request.GET:
             sale_products = Product.objects.filter(sale__in=products)
 

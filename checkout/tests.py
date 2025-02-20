@@ -33,6 +33,7 @@ class TestViews(TestCase):
     def test_get_checkout_page(self):
         """ Test checkout.html view """
         self.client.login(username="myUsername", password="myPassword12!!!")
+        # need something in bag before checkout
         response = self.client.get('/checkout')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response,'checkout/checkout.html')
@@ -60,3 +61,4 @@ class TestCheckoutModels(TestCase):
         testProduct = Product.objects.create(product_name='Test Product', product_description='x', price='2.00')
         test_orderLineItem = OrderLineItem.objects.create(order=testOrder, product=testProduct, quantity=1)
         self.assertTrue(test_orderLineItem)
+
