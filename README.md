@@ -354,6 +354,14 @@ This project was deployed via Heroku, using the following steps:
 
 # Credits
 
+For mentoring, code advising and project reviewing:
+
+- [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin")
+
+For technical support and guidance:
+
+- [Tutors at Code Institute](https://codeinstitute.net/blog/meet-our-support-teams/ "Code Institute Support")
+
 For content and design inspiration:
 
 - [Beards and Daisies](https://www.beardsanddaisies.co.uk/ "Beards and Daisies")
@@ -365,12 +373,14 @@ For content and design inspiration:
 \
 &nbsp;
 
+Finally, a big shoutout to my family, friends and loved ones for their unwavering encouragement and support.
+
 ---
 
 \
 &nbsp;
 
-Thank you, from Rachel Luke.
+Thank you all, from Rachel Luke.
 
 \
 &nbsp;
