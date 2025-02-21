@@ -37,9 +37,6 @@ The last update to this file was: **February 21st, 2025**
   - [Icons](#icons)
   - [Wireframes](#wireframes)
   - [Mockups](#mockups)
-- [Features](#features)
-  - [Existing Features](#existing-features)
-  - [Future Features - to be implemented](#future-features)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
   - [IDE](#ide)
@@ -48,6 +45,9 @@ The last update to this file was: **February 21st, 2025**
 - [Relational Database Management](#relational-database-management)
   - [Model Plan](#model-plan)
   - [Models](#models)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features - to be implemented](#future-features)
 - [Validating](#validating)
 - [Testing](#testing)
   - [Testing User Stories](#testing-user-stories)
@@ -57,6 +57,8 @@ The last update to this file was: **February 21st, 2025**
 - [Deployment](#deployment)
   - [Heroku](#heroku)
   - [How to Run this Project Locally](#how-to-run-this-project-locally)
+  - [Settings Python File](#settings-python-file)
+  - [Differences of Running Project in Heroku vs Locally](#differences-of-running-project-in-heroku-vs-locally)
 - [Credits](#credits)
 
 \
@@ -332,6 +334,23 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 \
 &nbsp;
 
+# Features
+
+## Existing Features
+
+## Future Features
+
+Filters - foreign key issue (outside scope so alt. available in product_info.html)
+Contact Form
+Subscription in footer
+Discount code (stripe) - future implementation
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 # Validating
 
 ## HTML Validator Results
@@ -367,6 +386,72 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 &nbsp;
 
 # Testing
+
+## Testing User Stories
+
+## Django Tests
+
+Tests-checkout views (need to get user session cookies, add item to bag, then test checkout)
+
+## Debugging
+
+- The following entail the key debugging moments during the project, some of which were logged in the 'Issues' within this project's GitHub repository.
+
+- JSQuery Import
+
+  - Using the Browser Inspector, there was an error `Uncaught ReferenceError: $ is not defined` as shown in screenshot below. The root of the issue was the the JSQuery import was not being properly loaded, hence a new JSQuery import link was used in `base.html` which resolved this issue.
+  - ![Debug - JSQuery](/static/docs/tests/debug-jsquery.png)
+
+- Bootstrap (CSS Styling)
+
+  - In the earlier/ initial versions of the project, HTML containers, sections and pages required heavy padding/ margin positioning. To refine the styling process, Bootstrap was introduced to alleviate media query styling.
+  - Two rounds of reiterations of CSS styling were done, the latter to minimize CSS file usage with Bootstrap class modifications and also to ensure that the following priorities were in place:
+    - Bootstrap hierachy: container > row > col > content
+    - Bootstrap cols: col > sm > md > lg
+  - Once these changes were made, this had a positive impact on the CSS efforts/ performance.
+
+- Checkout View
+
+  - There was a logged bug (Issue #40) where the user would checkout, which resulted in the stripe loading page then back to the checkout page, and not the order confirmation page as expected. There was no success toast either.
+  - My stripe dashboard confirmed that the transaction start but was 'incomplete'. Hence, by using the webhooks and Stripe CLI, it was evinced that there was an error with the `cache_checkout_data` view. Once the respective path in `urls.py (checkout)` was corrected the Stripe payment was successful and the order confirmation page was shown as expected.
+
+## Unfixed Bugs
+
+- Profile Page
+
+  - There is a white blank space after the footer (only in larger devices).
+  - The Order History's scroll is too close to the edge.
+  - ![Bug - Profile](/static/docs/tests/bug-profile.png)
+
+- Products Page
+
+  - When a user's search query has 0 results, the outcome (i.e., Products Page) has a white blank space below the footer.
+  - This bug is only for larger devices.
+  - ![Bug - Search](/static/docs/tests/bug-search.png)
+
+- UI - Adding Products to Bag
+
+  - When a customer adds a product to their bag, the number of bagged products is shown on the bag icon (in top header).
+  - This currently makes the bag icon drop slightly down compared to the other header items.
+  - ![Bug - Bag Icon](/static/docs/tests/bug-bag.png)
+
+- Chrome Extensions
+
+  - Using the Browser Inspector, there were two errors: `Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.` and the other error located in the screenshot below. These 'errors' were discovered to be due to chrome extensions, and do not appear in incognito browsers however.
+  - ![Bug - Chrome Extension](/static/docs/tests/bug-chrome.png)
+
+- Real Email Communication
+
+  - Throughout the project, when an email is communicated to be sent to the user, this does not happen.
+  - This is due to an on-going server issue faced by other MS4 Students as well outlined in the slack channels.
+  - In lieu of real emails, toasts notify the user when they have been signed in/ registered and email verifications are disabled in settings.py. Also, for order confirmations, users can check their profile's order history.
+  - For a user's password recovery, an admin (i.e., superuser) would have to do this manually via Django admin.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 # Deployment
 
@@ -434,6 +519,25 @@ For further reference on creating an email host pass, click [here.](https://help
 For further reference on creating a Stripe Keys, click [here.](https://docs.stripe.com/keys "Stripe Dev Documentation")
 
 For further reference on creating and storing Cloudinary keys, click [here.](https://dev.to/spymonk/integrating-cloudinary-storage-with-django-4ipb "Cloudinary Integration")
+
+## Settings Python File
+
+- The settings.py located in the project root level, is where the key logic for the following aspects of this project is configured:
+
+  - Imports and Django templates
+  - Allowed Hosts and CSRF Trusted Origins
+  - Installed Apps
+  - Middleware
+  - Django Password Authentication, Authentication Backends
+  - Stripe API Keys, Currency, 'Free Delivery Threshold' and 'Standard Delivery Percentage'
+  - Static vs Cloudinary Management (to be discussed further in next section)
+  - NOTE: Any and all confidential keys/informations are stored in either the env.py (for local build, which does not get committed to the repo or for Heroku deployment, in the config vars)
+
+## Differences of Running Project in Heroku vs Locally
+
+- In the settings.py file, it is configured so that if the project is run locally, the static files stored in the 'static' folder (in project root level) is used. Elsewise, the Cloudinary management is used with the Cloudinary API secret keys.
+
+- If 'Development' is set to true (in os.environ for local build), emails will be sent to terminal, else it is configured to use the Email Pass and send emails from the set Email Host.
 
 &nbsp;
 [Back to Top](#table-of-contents)

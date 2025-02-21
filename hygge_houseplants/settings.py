@@ -75,7 +75,7 @@ INSTALLED_APPS = [
 ]
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME':"dscxtzaho",
+    'CLOUD_NAME': "dscxtzaho",
     'API_KEY': os.environ.get('CL_API_KEY'),
     'API_SECRET': os.environ.get('CL_SECRET'),
 }
@@ -201,7 +201,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 if DEBUG:
-    STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static')]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 

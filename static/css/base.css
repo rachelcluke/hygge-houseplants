@@ -458,6 +458,9 @@ footer, #footer {
         padding-bottom: 1rem;
     }
 
+    #page-register {
+        padding-top: 5%;
+    }
 
     #page-register, #products-page {
         padding-bottom: 10%;
