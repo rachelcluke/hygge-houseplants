@@ -6,7 +6,7 @@
 
 Welcome,
 
-This is Hygge Houseplants e-commerce website, a full-stack (django) site for plant lovers to shop plants for their homes. They will also be able to view what movies other members have been watching. This is Rachel Luke's submission for Code Institute's Fullstacks Frameworks with Django (i.e., Milestone 4).
+This is Hygge Houseplants e-commerce website, a full-stack (Django) site for plant lovers to shop plants for their homes. They will also be able to view what movies other members have been watching. This is Rachel Luke's submission for Code Institute's Fullstacks Frameworks with Django (i.e., Milestone 4).
 
 The following are high-level details of this project:
 
