@@ -211,13 +211,19 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 - [TempMail](https://temp-mail.org/ "TempMail")
 
+- [Cloudinary](https://cloudinary.com/ "Cloudinary")
+
+- [Coverage](https://coverage.readthedocs.io/en/7.6.12/ "Coverage")
+
+- [Whitenoise](https://whitenoise.readthedocs.io/en/stable/django.html "Whitenoise")
+
 - [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
 
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
 
 - [W3C JS Validation Service](https://jshint.com "JSHint JS")
 
-- [Python PEP8 checker](https://www.codewof.co.nz/style/python3/ "Python PEP8 checker")
+- [Flake8](https://flake8.pycqa.org/en/latest/ "Flake8")
 
 \
 &nbsp;
@@ -389,9 +395,33 @@ Discount code (stripe) - future implementation
 
 ## Testing User Stories
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 ## Django Tests
 
-Tests-checkout views (need to get user session cookies, add item to bag, then test checkout)
+In addition to manual tests of the user stories, automated Django unit testings were conducted within this Hygge Houseplants project. Each unit test isolate and a specific function with a result of one of the following: `.` (Success), `E` (Error) and `F` (Fail).
+
+Each module within this project (which include: bag, checkout, home, products + profiles) has its own `tests.py` file. Within each file, there are tests for Forms, Views and Models (where applicable).
+To conduct the Django tests within your local build, refer to the respective module's test.py file.
+For example, if you wanted to test the Products (module) tests within this project, run the following command in your terminal: `python manage.py test products.tests`
+
+### Django Test Coverage
+
+A tool called 'Coverage' has been installed and used to check and create reports on the Django tests coverage over the project. A few iterations have already been done, for example within the Products module, the coverage was initially 74% but was improved to 76% after more Model tests were added to check on the string return methods. Screenshots of these reports are shown below.
+
+- ![Product Test - v1](/static/docs/tests/product-test-1.png)
+- ![Product Test - v2](/static/docs/tests/product-test-2.png)
+  For future development, all of the modules' test files should be worked on further to improve the overall coverage percentage.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ## Debugging
 
@@ -535,9 +565,11 @@ For further reference on creating and storing Cloudinary keys, click [here.](htt
 
 ## Differences of Running Project in Heroku vs Locally
 
-- In the settings.py file, it is configured so that if the project is run locally, the static files stored in the 'static' folder (in project root level) is used. Elsewise, the Cloudinary management is used with the Cloudinary API secret keys.
+- In the settings.py file, it is configured so that if the project is run locally, the static files stored in the 'static' folder (in project root level) is used. Elsewise, the Cloudinary management is used with the Cloudinary API secret keys. Also, in the Heroku app, Cloudinary is installed as an 'Add-On'.
 
 - If 'Development' is set to true (in os.environ for local build), emails will be sent to terminal, else it is configured to use the Email Pass and send emails from the set Email Host.
+
+- Gunicorn (wsgi) is set in settings.py for local build and in 'Resources' in Heroku.
 
 &nbsp;
 [Back to Top](#table-of-contents)

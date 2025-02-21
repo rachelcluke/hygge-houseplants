@@ -65,7 +65,7 @@ class TestViews(TestCase):
                                              password="myPassword12!!!",
                                              email="test00@test.com")
       
-# Tests failed due to issue with setting up bag configuration in user's session
+# Note: Tests failed due to issue with setting up bag configuration in user's session
 
 #    def test_get_checkout_page(self):
 #        """ Test checkout.html view """
