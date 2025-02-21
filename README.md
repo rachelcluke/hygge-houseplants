@@ -338,6 +338,53 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 ## Existing Features
 
+### Header (Navigation Bar)
+
+![Header](/static/docs/features/feature-header.png)
+
+- The `base.html` (which is extended by all html files), is where the header layout is situated (at the top).
+- This contains an interactable logo, which conveniently redirects the user back to the Home page (`index.html`). The 'Home' button also does this.
+- The 'Shop' navigation link has a drop-down list where the user can select whether they wish to view all products or shop by categories. This is to enhance the user's experience and to expedite their search.
+  - ![Shop Drop-down](/static/docs/features/feature-shop-drop.png)
+- The 'Contact' navigation link opens a new tab to the company's Facebook page in case they would like to contact the company for any questions/ issues around orders.
+- When the navigation links are hovered, they change font colour to white to indicate they are interactive.
+- The search bar is functional and will be further discussed in the Product Page section. This feature allows for the user to directly search for a product if they do not see it immediately.
+- The user icon and bag icon are UI-friendly and when hovered turn less opaque to indicate they are interactive. Their respective functionality (profile and bag) will be elaborated on in the later sections.
+- Within the header, below the navigation bar, is the 'announcements' banner. This is where the shop owner can display announcements or engage with the customer with promotions or incentive. The striking colours are to help catch the shoppers' eye.
+
+### Home Page
+
+- The Home Page (`index.html`) consists of three sections.
+
+- Section 1 - Shop All
+
+  - ![Shop All](/static/docs/features/feature-home-1.png)
+  - The button directs users to the all products page and when hovered has its colours inverted (within the projects' colour scheme) to entice the users to click.
+
+- Section 2 - Shop By Collection
+
+  - ![Shop By Collection](/static/docs/features/feature-home-2.png)
+  - The users gain more insight into what type of plants are sold and can conveniently choose which type they fancy on shopping.
+  - The section images are handled by Bootstrap/css configuration to adapt to media queries.
+  - ![Shop By Collection - Mobile](/static/docs/features/feature-home-2-mobile.png)
+
+- Section 3 - About Us
+  - ![About Us](/static/docs/features/feature-home-3.png)
+  - This section informs/ encourages the users to shop on this website, providing positive insight and context of the Hygge Houseplants company and their virtues.
+  - Once again, this is handled with Bootstrap/css to fit according to device sizes.
+
+### Footer
+
+![Footer](/static/docs/features/feature-footer.png)
+
+- The `base.html` (which is extended by all html files), is where the footer is situated (at the bottom).
+- The footer contains a copyright and also the company's social media outlets. Each of the social media icons are interactable (as the users' mouse converts from an arrow pointer to touch one when it hovers). When clicked, a new tab is opened (for security reasons) and directs the user to the respective social media page.
+
+### Accessibility
+
+- url configuration
+- img
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -348,7 +395,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 - Product Filters
 
-  - In addition to the existing 'sort drop-down' feature, a Product Filter could be added to the Products page (product.html). This was initially planned in the wireframes however due to the a foreign key issue complicating the query between models, the plant product's 'Care', 'Light' and 'Pet-friendly?' attributes are visible in the respective products' information page (product_info.html).
+  - In addition to the existing 'sort drop-down' feature, a Product Filter could be added to the Products page (`product.html`). This was initially planned in the wireframes however due to the a foreign key issue complicating the query between models, the plant product's 'Care', 'Light' and 'Pet-friendly?' attributes are visible in the respective products' information page (`product_info.html`).
 
 - Contact Form
 
