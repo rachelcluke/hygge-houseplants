@@ -411,8 +411,12 @@ footer, #footer {
         max-width: 80%;
     }
 
-    #page-logout {
+    #page-logout{
         padding-bottom: 20%;
+    }
+
+    #profile-update-form {
+        padding-bottom: 30%;
     }
 
 }
