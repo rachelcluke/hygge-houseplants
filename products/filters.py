@@ -4,7 +4,8 @@ from .models import Product
 
 
 class ProductFilter(django_filters.FilterSet):
-    """Filter plant products based on their care level, light level and if they are pet friendly."""
+    """Filter plant products based on their care level, 
+    light level and if they are pet friendly."""
 
     care_ref_low = Product.objects.filter(light_ref=[0]).values()
     care_ref_medium = Product.objects.filter(light_ref=[1]).values()
@@ -25,14 +26,3 @@ class ProductFilter(django_filters.FilterSet):
         return queryset.filter(**{
             name: value,
         })
-        queries = Q(product_name__icontains=query) | Q(product_description__icontains=query)
-        products = products.filter(queries)
-    
-        context = {
-            'products': products,
-            'search_term': query,
-            'sale_products:': sale_products,
-            'current_categories': categories,
-            'current_sorting': current_sorting,
-        }
-        return render(request, 'products/products.html', context)

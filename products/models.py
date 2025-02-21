@@ -68,9 +68,12 @@ class Product(models.Model):
 
 
 class Discount(models.Model):
-    """Discount Class contains code, discount, active?, validity_start and validity_end."""
+    """Discount Class contains code, discount, active?, 
+    validity_start and validity_end."""
     code = models.CharField(max_length=50)
-    discount = models.IntegerField(blank=True, default=0, validators=[MaxValueValidator(99), MinValueValidator(1)])
+    discount = models.IntegerField(blank=True, default=0,
+                                   validators=[MaxValueValidator(99),
+                                               MinValueValidator(1)])
     discount_description = models.TextField()
     active = models.BooleanField(default=False, null=True, blank=True)
     validity_start = models.DateTimeField()
@@ -86,5 +89,6 @@ class Discount(models.Model):
         return self.code
 
     def __repr__(self):
-        """Magic Method to return Discount code, discount %, active?, validity_start, validiy end."""
+        """Magic Method to return Discount code, discount %, 
+        active?, validity_start, validiy end."""
         return self.code, self.discount, self.discount_description, self.active, self.validity_start, self.validity_end

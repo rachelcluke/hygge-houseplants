@@ -352,28 +352,13 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 ## Python PEP8 Checker Results
 
-- ** init **.py
-
-  - Initially 7 style issues were located, mainly around 'whitespace's. The important ones were resolved.
-  - Python PEP8 checker [results](docs/validator/python-check-init.png "Python PEP8")
-
-- routes.py
-
-  - Most of the errors around the syntax (mostly to do with spacing, indentation and required docstrings) were resolved. Only ones left are to do with imports and long lines.
-
-- run.py
-
-  - Initially 3 style issues were located, to do with leaving a blank line at the end of the file etc. These have been resolved and there are no style errors now.
-  - Python PEP8 checker [results](docs/validator/python-check-run.png "Python PEP8")
-
-- models.py
-
-  - Initially style issues were identified, mostly to do with 'whitespaces', spacing before and after classes and docstrings. The issues not relating to import or breaking up long lines, were resolved.
-  - Python PEP8 checker [results](docs/validator/python-check-models.png "Python PEP8")
-
-- validation.py
-  - The main style issues resolved for this file, were to do with re-formatting the docstrings, to ensure that there is command, description, args and parameters.
-  - Python PEP8 checker [results](docs/validator/python-check-validation.png "Python PEP8")
+- Within the VSCode Project, Flake8, an in-built extension, which is a Python PEP8 Checker was used.
+- Styling errors were discovered and resolved; these include the following:
+  - Add spaces after commas in lists
+  - Break up long lines
+  - Remove trailing whitespace
+  - Adding new lines at the end of a file
+  - Ensure two blank lines to separate classes and functions
 
 \
 &nbsp;

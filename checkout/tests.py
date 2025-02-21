@@ -9,41 +9,63 @@ class TestOrderForm(TestCase):
 
     def test_order_form_fields_are_required(self):
         """ Test form instance is valid """
-        form = OrderForm({'full_name': '', 'email': '', 'phone_number':'', 'street_address1': '', 'town_or_city': ''})
+        form = OrderForm({'full_name': '', 'email': '', 'phone_number': '',
+                          'street_address1': '', 'town_or_city': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('full_name', form.errors.keys())
-        self.assertEqual(form.errors['full_name'][0], 'This field is required.')
-    
+        self.assertEqual(form.errors['full_name'][0],
+                         'This field is required.')
+
     def test_fields_are_explicit_in_form_metaclass(self):
         """ Test form instance meta fields """
         form = OrderForm()
-        self.assertEqual(form.Meta.fields, ('full_name', 'email', 'phone_number',
-                  'street_address1', 'street_address2',
-                  'town_or_city', 'postcode', 'country',
-                  'county'))
-    
+        self.assertEqual(form.Meta.fields, ('full_name', 'email',
+                                            'phone_number',
+                                            'street_address1',
+                                            'street_address2',
+                                            'town_or_city', 'postcode',
+                                            'country', 'county'))
+
+
 class TestCheckoutModels(TestCase):
     """ Test Models in Checkout App """
     def test_order_model(self):
         """ Test Order model """
-        testorder = Order.objects.create(order_number=000, full_name='Yasmin Oh', phone_number = 29248, country='United Kingdom', town_or_city='x', street_address1='x' )
+        testorder = Order.objects.create(order_number=000,
+                                         full_name='Yasmin Oh',
+                                         phone_number=29248,
+                                         country='United Kingdom',
+                                         town_or_city='x',
+                                         street_address1='x')
         self.assertTrue(testorder)
     
     def test_order_line_model(self):
         """ Test Order Line Items model """
-        testOrder = Order.objects.create(order_number=000, full_name='Yasmin Oh', phone_number = 29248, country='United Kingdom', town_or_city='x', street_address1='x' )
-        testProduct = Product.objects.create(product_name='Test Product', product_description='x', price='2.00')
-        test_orderLineItem = OrderLineItem.objects.create(order=testOrder, product=testProduct, quantity=1)
+        testOrder = Order.objects.create(order_number=000,
+                                         full_name='Yasmin Oh',
+                                         phone_number=29248,
+                                         country='United Kingdom',
+                                         town_or_city='x',
+                                         street_address1='x')
+        testProduct = Product.objects.create(product_name='Test Product',
+                                             product_description='x',
+                                             price='2.00')
+        test_orderLineItem = OrderLineItem.objects.create(order=testOrder,
+                                                          product=testProduct,
+                                                          quantity=1)
         self.assertTrue(test_orderLineItem)
+
 
 class TestViews(TestCase):
     """ Test Views in Checkout App """
 
     def setUp(self):
         """Create a user"""
-        self.user = User.objects.create_user(username="myUsername", password="myPassword12!!!", email="test00@test.com")
-        
-    # Tests failed due to issue with setting up bag configuration in user's session
+        self.user = User.objects.create_user(username="myUsername",
+                                             password="myPassword12!!!",
+                                             email="test00@test.com")
+      
+# Tests failed due to issue with setting up bag configuration in user's session
 
 #    def test_get_checkout_page(self):
 #        """ Test checkout.html view """

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .forms import ProductForm
 from .models import Product, Category, Light, Care, Discount
 
+
 class TestProductForm(TestCase):
     """ Test Form in Products App """
 
@@ -31,11 +32,12 @@ class TestViews(TestCase):
         """ Test products.html view """
         response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response,'products/products.html')
+        self.assertTemplateUsed(response, 'products/products.html')
     
     def test_get_products_info_page(self):
         """ Test product_info.html view """
-        product = Product.objects.create(product_name='Test Product', product_description='x', price='2.00')
+        product = Product.objects.create(product_name='Test Product', 
+                                         product_description='x', price='2.00')
         response = self.client.get(f'/products/{product.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/product_info.html')
@@ -50,7 +52,8 @@ class TestViews(TestCase):
     def test_get_edit_product_page(self):
         """ Test edit_product.html view """
         self.client.login(username="myUsername", password="myPassword")
-        product = Product.objects.create(product_name='Test Product', product_description='x', price='2.00')
+        product = Product.objects.create(product_name='Test Product', 
+                                         product_description='x', price='2.00')
         response = self.client.get(f'/products/edit/{product.id}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/edit_product.html')
@@ -65,17 +68,19 @@ class TestModels(TestCase):
     
     def test_category_string_method_returns_name(self):
         """ Test Category string method returns name """
-        category = Category.objects.create(name='CTN', user_friendly_name='Category Test Name')
+        category = Category.objects.create(name='CTN')
         self.assertEqual(str(category), 'CTN')
 
     def test_product_model(self):
         """ Test Product model instance """
-        product = Product.objects.create(product_name='Product Test', product_description='x', price='1.00')
+        product = Product.objects.create(product_name='Product Test',
+                                         product_description='x', price='1.00')
         self.assertTrue(product)
 
     def test_product_string_method_returns_name(self):
         """ Test Product string method returns product name """
-        product = Product.objects.create(product_name='Product Name', product_description='x', price='1.00')
+        product = Product.objects.create(product_name='Product Name',
+                                         product_description='x', price='1.00')
         self.assertEqual(str(product), 'Product Name')
     
     def test_care_model(self):
@@ -100,13 +105,19 @@ class TestModels(TestCase):
     
     def test_discount_model(self):
         """ Test discount model instance """
-        discount = Discount.objects.create(code='x', discount_description='x', validity_start='2025-02-18 00:00:00', validity_end='2026-02-18 00:00:00',)
+        discount = Discount.objects.create(code='x', discount_description='x',
+                                           validity_start='2025-02-18 00:00:00',
+                                           validity_end='2026-02-18 00:00:00',)
         self.assertTrue(discount)
     
     def test_discount_string_method_returns_name(self):
         """ Test Discount string method returns discount code """
-        discount = Discount.objects.create(code='DISCOUNT', discount_description='x', validity_start='2025-02-18 00:00:00', validity_end='2026-02-18 00:00:00',)
+        discount = Discount.objects.create(code='DISCOUNT', 
+                                           discount_description='x',
+                                            validity_start='2025-02-18 00:00:00',
+                                            validity_end='2026-02-18 00:00:00')
         self.assertEqual(str(discount), 'DISCOUNT')
+
 
 
 
