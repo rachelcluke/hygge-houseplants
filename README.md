@@ -19,7 +19,7 @@ The following are high-level details of this project:
 - The final version has been deployed via GitHub Pages.
 - There are no passwords or secret keys in the project repository.
 
-The last update to this file was: **December 17th, 2024**
+The last update to this file was: **February 21st, 2025**
 
 \
  &nbsp;
@@ -341,16 +341,68 @@ This project was deployed via Heroku, using the following steps:
 1. Log in Heroku website, create a new app
 2. Go to Settings and add the following Config Vars:
 
-- DATABASE_URL: Enter Postgres URL postgres://XXX
+- DATABASE_URL: Enter Postgres URL postgres://EXAMPLE-POSTGRES-URL
 - IP: 0.0.0.0
 - PORT: 5000
 - SECRET_KEY: XXXX
+- CLOUDINARY_URL: cloudinary://XXX
+- CL_API_KEY: XXX
+- CL_SECRET: XXX
+- DEBUG: TRUE (before launch, change to FALSE)
+- DEVELOPMENT: TRUE (before launch, change to FALSE)
+- DISABLE_COLLECTSTATIC: 1
+- EMAIL_HOST_PASS: XXX
+- EMAIL_HOST_USER: XXX@X.COM
+- STRIPE_PUBLIC_KEY: pk_test_XXX
+- STRIPE_SECRET_KEY: sk_test_XXX
+- STRIPE_WH_SECRET: whsec_XXX
 
 3. In the 'Deployment method' section, connect to GitHub (and also Enable Automatic Deploys).
 4. Run in console: (`python3`)
-5. In console, import Postgres database: (`from my_mdb import db`) and then (`db.create_all()`).
-6. Deploy the website. This link is [xxx](https://xxx.herokuapp.com/ "xxx").
-7. If any changes were required, they could be done, commited and pushed to GitHub and the changes would automatically be updated and deployed.
+5. In console, import Postgres database: (`from hygge_houseplants import db`) and then (`db.create_all()`).
+6. Deploy the website. This link is [Hygge Houseplants - Heroku](https://ms4-hygge-houseplants-727aa19c949d.herokuapp.com/).
+7. If any changes were required, they could be implemented, commited and pushed to GitHub and the changes would automatically be updated and deployed.
+
+## How to Run this Project Locally
+
+To work on this project within your local IDE such as VSCode, Pycharm etc:
+
+1. Follow this link to the [Project GitHub repository](https://github.com/rachelcluke/hygge-houseplants "Project GitHub respository")
+2. Under 'Code', copy the Clone URL for the repository.
+3. In your local IDE, open a terminal.
+4. Navigate into the desired working directory.
+5. Type `git clone` and then paste the URL you copied in Step 2.
+6. Hit Enter and your local clone will be created.
+7. Within your project, in a terminal run `pip install -r /path/to/requirements.txt`.
+8. Create an env.py file within the project folder and include the name of this file in your .gitignore file before committing.
+9. Within your env.py file, add and modify the following:
+
+   - `import os`
+   - `os.environ["envpy_test"] = "envpy"`
+   - `os.environ["DATABASE_URL"] = "postgresql://XXX"`
+   - `os.environ["DEVELOPMENT"] = "TRUE"`
+   - `os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY`
+   - `os.environ["EMAIL_HOST_USER"] = "YOUREMAIL@.COM"`
+   - `os.environ["EMAIL_HOST_PASS"] = "EMAIL SECURITY PASS"`
+   - `os.environ["STRIPE_PUBLIC_KEY"] "pk_test_XXX" `
+   - `os.environ["STRIPE_SECRET_KEY"] = "sk_test_XXX" `
+   - `os.environ["STRIPE_WH_SECRET"] = "whsec_XXX" `
+   - `os.environ["CL_API_KEY"] = "XXX" `
+   - `os.environ["CL_SECRET"] = "XXX"`
+   - `os.environ["USE_CLOUDINARY"] = "TRUE"`
+
+For further reference on cloning a respository from GitHub, click [here.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository "Cloning a repository")
+
+For further reference on creating an email host pass, click [here.](https://help.referral-factory.com/en/articles/9782920-how-to-set-up-your-own-email-server-using-gmail "Set up Gmail server")
+
+For further reference on creating a Stripe Keys, click [here.](https://docs.stripe.com/keys "Stripe Dev Documentation")
+
+For further reference on creating and storing Cloudinary keys, click [here.](https://dev.to/spymonk/integrating-cloudinary-storage-with-django-4ipb "Cloudinary Integration")
+
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 # Credits
 
