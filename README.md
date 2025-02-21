@@ -332,6 +332,57 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 \
 &nbsp;
 
+# Validating
+
+## HTML Validator Results
+
+- Using the w3 validator, any and all HTML errors/warnings were to do around passing variables around in the Django templates, which are required in this project. An example of this is included below.
+  - HTML validator results (of index.html) [results](/static/docs/validator/html-validator-index.png "W3 HTML")
+
+## CSS Validator Results
+
+- No errors were present in the validation of base.css, profile.css and checkout.css files. An example of the results is included below.
+  - CSS validator results (of base.css) [results](/static/docs/validator/css-validator-base.png "W3C CSS")
+
+## JS Validator Results
+
+- Essentially most of the warnings from JSHint Validator were to do with the ESVersion and not the syntax. A missing semicolon was added and unnecessary semicolon was removed to resolve two warnings. Results of the validation of countryfield.js and stripe_elements.js are located below.
+  - JS validator results (of countryfield.js) [results](/static/docs/validator/js-validator-countryfield.png "JSHint JS")
+  - JS validator results (of stripe_elements.js) [results](/static/docs/validator/js-validator-stripe.png "JSHint JS")
+
+## Python PEP8 Checker Results
+
+- ** init **.py
+
+  - Initially 7 style issues were located, mainly around 'whitespace's. The important ones were resolved.
+  - Python PEP8 checker [results](docs/validator/python-check-init.png "Python PEP8")
+
+- routes.py
+
+  - Most of the errors around the syntax (mostly to do with spacing, indentation and required docstrings) were resolved. Only ones left are to do with imports and long lines.
+
+- run.py
+
+  - Initially 3 style issues were located, to do with leaving a blank line at the end of the file etc. These have been resolved and there are no style errors now.
+  - Python PEP8 checker [results](docs/validator/python-check-run.png "Python PEP8")
+
+- models.py
+
+  - Initially style issues were identified, mostly to do with 'whitespaces', spacing before and after classes and docstrings. The issues not relating to import or breaking up long lines, were resolved.
+  - Python PEP8 checker [results](docs/validator/python-check-models.png "Python PEP8")
+
+- validation.py
+  - The main style issues resolved for this file, were to do with re-formatting the docstrings, to ensure that there is command, description, args and parameters.
+  - Python PEP8 checker [results](docs/validator/python-check-validation.png "Python PEP8")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Testing
+
 # Deployment
 
 ## Heroku
