@@ -1,7 +1,3 @@
-<!-- # Hygge Houseplants Website
-
-![Am I responsive - Hygge Houseplants](static/docs/amiresponsive.png "Am I responsive") -->
-
 # Project Overview
 
 Welcome,
@@ -203,8 +199,6 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 - [CI Full Template](https://github.com/Code-Institute-Org/ci-full-template "CI Full Template")
 
-- [Am I Responsive](https://ui.dev/amiresponsive "Am I Responsive")
-
 - [Tables Generator](https://www.tablesgenerator.com/markdown_tables "Tables Generator")
 
 - [DrawSQL](https://drawsql.app/ "DrawSQL")
@@ -344,12 +338,33 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 ## Existing Features
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 ## Future Features
 
-Filters - foreign key issue (outside scope so alt. available in product_info.html)
-Contact Form
-Subscription in footer
-Discount code (stripe) - future implementation
+- Product Filters
+
+  - In addition to the existing 'sort drop-down' feature, a Product Filter could be added to the Products page (product.html). This was initially planned in the wireframes however due to the a foreign key issue complicating the query between models, the plant product's 'Care', 'Light' and 'Pet-friendly?' attributes are visible in the respective products' information page (product_info.html).
+
+- Contact Form
+
+  - Instead of the current logic where the 'Contact' in the Navigation Header opens up a new tab directing to a Facebook page, a better, improved communication platform would be to have a Contact Form. The user would be able to submit a message along with their email and this would go directly to the company. They would also get a confirmation email that their message has been submitted.
+
+- Footer - Subscription to Newsletter
+
+  - The footer is rather simple and could be fleshed out with more features like a subscription form, where users can sign up to a newsletter/ marketing emails and potentially as incentive could get a one-off 10% Discount for signing up.
+
+- Discount Codes - Checkout
+
+  - There is currently a Discounts model (in Products model) that is not being used. This should be used in the future, where only active, valid discount codes within the model can be authenticated and applied to users' checkout bags.
+
+- Returns & Refunds
+
+  - A typical component of e-commerce websites are a 'Returns & Refunds' form/ section within the User Profile. This could be a future implementation to improve the users' experience instead of having to send a message via Facebook to the company.
 
 \
 &nbsp;
@@ -375,7 +390,7 @@ Discount code (stripe) - future implementation
   - JS validator results (of countryfield.js) [results](/static/docs/validator/js-validator-countryfield.png "JSHint JS")
   - JS validator results (of stripe_elements.js) [results](/static/docs/validator/js-validator-stripe.png "JSHint JS")
 
-## Python PEP8 Checker Results
+## Python Flake8 Results
 
 - Within the VSCode Project, Flake8, an in-built extension, which is a Python PEP8 Checker was used.
 - Styling errors were discovered and resolved; these include the following:
@@ -585,6 +600,10 @@ For mentoring, code advising and project reviewing:
 For technical support and guidance:
 
 - [Tutors at Code Institute](https://codeinstitute.net/blog/meet-our-support-teams/ "Code Institute Support")
+
+For social media reference:
+
+- [Plants and Papers Swansea](https://www.instagram.com/plantsandpapers/ "Plants and Papers")
 
 For content and design inspiration:
 
