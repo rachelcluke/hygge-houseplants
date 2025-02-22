@@ -2,7 +2,7 @@
 
 Welcome,
 
-This is Hygge Houseplants e-commerce website, a full-stack (Django) site for plant lovers to shop plants for their homes. They will also be able to view what movies other members have been watching. This is Rachel Luke's submission for Code Institute's Fullstacks Frameworks with Django (i.e., Milestone 4).
+This is Hygge Houseplants e-commerce website, a full-stack (Django) site for plant lovers to shop indoor houseplants for their homes. This is Rachel Luke's submission for Code Institute's Fullstacks Frameworks with Django (i.e., Milestone 4).
 
 The following are high-level details of this project:
 
@@ -67,6 +67,7 @@ The last update to this file was: **February 22nd, 2025**
 ## User Stories
 
 At the planning stage of this project, stories for three roles: Site User, Shopper and Admin were created.
+
 These stories are grouped within 5 stages: (1) Viewing and Navigation, (2) Registration and User Accounts, (3) Sorting and Searching, (4) Purchasing and Checkout, and (5) Admin and Store Management.
 
 Below, is a screenshot of the spreadsheet listing the Site User, Shopper and Admin stories:
@@ -104,7 +105,7 @@ Additional Notes:
 
 ## Icons
 
-During testing, the console indicated that an icon from Favicon was required as the 'logo' symbol for the browser tab. As a fitting icon, I downloaded and incoporated the film icon from [Favicon](https://favicon.io/ "Favicon").
+As an apt icon, I downloaded and incoporated the plant icon from [Favicon](https://favicon.io/ "Favicon").
 
 ## Breakpoints
 
@@ -125,7 +126,7 @@ As a starting point, I will be building my website with a mobile first mindset u
 
 ## Wireframes
 
-I have used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") to develop my wireframes for my website. I initially created the mobile version and then the wireframes and then scaled it up for desktop. The website has 3 pages that are all scrollable and displays/hides sections with logic in lieu of having even more HTML pages to decrease inconvenient reloading of entire website.
+I have used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") to develop my wireframes for my website. I initially created the mobile version and then the wireframes and then scaled it up for desktop. The website has 3 pages that are all scrollable sections with logic in lieu of having even more HTML pages to decrease inconvenient reloading of entire website.
 
 The wireframes are below:
 
@@ -247,7 +248,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 - This model contains the Category name (required field, returned by string method) and user friendly name.
 
-- The Category name is also the field connects the Category Model and Product Model, where each Product object is connected with a Category name.
+- The Category name is also the field, which connects the Category Model and Product Model (where each Product object is connected with a Category name).
 
 ### Product Model
 
@@ -260,7 +261,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 | 5           | Bird of Paradise | Strelitzia Nicolai      |             | Yes   | 18.99 |            | 4        | 4.2    | birdparadise.png |           | 1          | 3           | No            |
 | 6           | Peace Lily       | Spathiphyllum wallisii  |             | Yes   | 12    | 10.50      | 4        | 4.8    | peacelily.png    |           | 3          | 1           | No            |
 
-- This model returns the string Product Name.
+- The Product model returns the string Product Name.
 
 - The required fields are Product Name, Description and Price.
 
@@ -274,7 +275,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 | 2           | medium_care | Easy to take care  |
 | 3           | high_care   | Needs a lot of TLC |
 
-- This model's fields are assigned to each Product object.
+- The Care model's fields are assigned to each Product object.
 
 ### Plant Light Level Model
 
@@ -284,7 +285,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 | 2           | medium_light | Medium Light       |
 | 3           | high_light   | Bright Light       |
 
-- This model's fields are assigned to each Product object.
+- The Light model's fields are assigned to each Product object.
 
 ### Discount Code Model
 
@@ -294,7 +295,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 | 2           | pRL29Akc04    | 10         | Student Discount           | Yes     | 11/12/2024 00:00:00     | 11/02/2024 00:00:00   |
 | 3           | BLACKFRIYAY25 | 25         | Black Friday 2024 Discount | No      | 28/11/2024 00:00:00     | 30/11/2024 00:00:00   |
 
-- This model contains the Discount Code (required field, returned by string method) and Discount%, Discription (required), Active?, Validity Start (required field), Validity End (required field)
+- The Discount model contains the Discount Code (required field, returned by string method) and Discount%, Discription (required), Active?, Validity Start (required field), Validity End (required field).
 
 ## Models - Profiles App
 
@@ -316,7 +317,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 |                                  |              |                           |           |                  |              |                |          |              |                  |                  |            |               |             |             |              |                             |
 |                                  |              |                           |           |                  |              |                |          |              |                  |                  |            |               |             |             |              |                             |
 
-- This model contains the Order Number (random generated 32-bit string), User Profile (username field cascaded from the UserProfile model), Date (date+time), Full Name (required), Email (required), Phone Number (required), Country (required, drop-down select), Postcode, Town or City (required), Street Address 1 (required), Street Address 2, County, Delivery Cost (read-only), Order total (read-only), Grand total (read-only), Original bag (product pk: quantity) and Stripe PID (read-only).
+- The Order model contains the Order Number (random generated 32-bit string), User Profile (username field cascaded from the UserProfile model), Date (date+time), Full Name (required), Email (required), Phone Number (required), Country (required, drop-down select), Postcode, Town or City (required), Street Address 1 (required), Street Address 2, County, Delivery Cost (read-only), Order total (read-only), Grand total (read-only), Original bag (product pk: quantity) and Stripe PID (read-only).
 
 ### OrderLineItem Model
 
@@ -324,7 +325,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 | --------- | -------- | --------------- | ------- |
 | Aloe Vera | 3        | 49.50           | False   |
 
-- This model is linked with the Order Model (the order number gets cascaded).
+- The OrderLineItem model is linked with the Order Model (where the order number is cascaded).
 
 - The fields are Product (product name), quantity, line item total (read-only), delete? (boolean).
 
@@ -407,7 +408,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
   - ![Search Results](/static/docs/features/feature-search-results.png)
 
-- On the right hand side, is where the Sort drop-down feature is positioned. When clicked on, a drop-down list is shown (which can be closed once clicked outside). This sort feature is for the customers to customise the ordering of the products being shown by rating and price (high to low or vice-versa). This is handy for users for when there are a lot of products to browse through and they can prioritise which products to view.
+- On the right hand side, is where the Sort drop-down feature is positioned. When clicked on, a drop-down list is shown (which can be closed once clicked outside). This sort feature is for the customers to customise the ordering of the products being shown by rating and price (high to low or vice-versa). This is handy for users for when there are plenty of products to browse through and they can prioritise which products to view.
 
   - ![Sort](/static/docs/features/feature-products-sort.png)
 
@@ -427,7 +428,7 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 - The 'Delete' link will delete the Product and this action will be confirmed by a toast message.
 
-- Only superusers have the ability to modify, and even if a 'normal' user attempts to type in the URL to edit/delete/add a product, they will not be able to.
+- Only superusers have the ability to modify, and even if a 'normal' user attempts to type in the URL to edit/delete/add a product, they will not be able to. If no one is logged in, the website will initially direct them to the Sign In page. If a non superuser admin is logged in, and attempts to enter in 'add' or 'edit' in the URL, the site will return a server error (as expected).
 
 - To add a product, a superuser (once logged in) can either enter at the end of the URL `/products/add` or click on the user icon and go to 'Product Management'. Below is a screenshot of a superadmin adding a product using the Product Management form.
   - ![Add Product](/static/docs/features/feature-products-add.png)
@@ -587,7 +588,7 @@ As there is a total of 28 stories (listed precedingly), the testing results of t
 
 ### Stories - Viewing and Navigation
 
-1. DONE - As the site user enters the website for the first time, the logo, appearance of the first two launch sections, clarify the purpose of this plants e-commerce website. [View outcome.](static/docs/stories/story-1.png "story 1 outcome")
+1. DONE - As the site user enters the website for the first time, the logo and the appearance of the first two launch sections, are a few of the features which clarify the purpose of this plants e-commerce website. [View outcome.](static/docs/stories/story-1.png "story 1 outcome")
 
 2. DONE - There are multiple points in the launch page, where the shopper can view a list of products: 'Shop' in navigation header, 'SHOP ALL INDOOR PLANTS' button in first home page section and 'Shop by Category' with four different plant categories in the second home page section. [View outcome.](static/docs/stories/story-2.png "story 2 outcome")
 
@@ -667,11 +668,11 @@ For example, if you wanted to test the Products (module) tests within this proje
 
 ### Django Test Coverage
 
-A tool called 'Coverage' has been installed and used to check and create reports on the Django tests coverage over the project. A few iterations have already been done, for example within the Products module, the coverage was initially 74% but was improved to 76% after more Model tests were added to check on the string return methods. Screenshots of these reports are shown below.
+A tool called 'Coverage' has been installed (in local environment) and used to check and create reports on the Django tests coverage over the project. A few iterations have already been done, for example within the Products module, the coverage was initially 74% but was improved to 76% after more Model tests were added to check on the string return methods. Screenshots of these reports are shown below.
 
 - ![Product Test - v1](/static/docs/tests/product-test-1.png)
 - ![Product Test - v2](/static/docs/tests/product-test-2.png)
-  For future development, all of the modules' test files should be worked on further to improve the overall coverage percentage.
+  For future development, all of the modules' test files should be worked on further to improve and increase the overall coverage percentage.
 
 \
 &nbsp;
