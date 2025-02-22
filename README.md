@@ -379,6 +379,14 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 \
 &nbsp;
 
+### Profile Page
+
+![Profile Page](/static/docs/features/feature-profile.png)
+
+- The Profile Page essentially has two components: (1) Delivery address form and (2) Order History.
+- The delivery address form allows users to input their address details so that it is automatically stored and filled out at checkout (which expedites the shopping experience for the user).
+- The Order History table is a useful reference point for the customer to be able to review and refer to their shopping orders and their respective dates/times, and order total.
+
 ### Products Page
 
 ![Products](/static/docs/features/feature-products-page.png)
@@ -421,14 +429,41 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 ![Products - Individual](/static/docs/features/feature-product-individual.png)
 
 - The invidiual product page (`products-info.html`) is where the user can view more details on their selected product. If they are a superuser, they will also be able to edit/delete the product via this view as well.
+
+- Depending on the products' corresponding data, if they are pet-friendly, this attribute will dynamically be listed under the product's description. Along with the associated Light and Care level, these attributes have a short description next to a user-friendly icon.
+
+  - ![Product Attributes - Example](/static/docs/features/feature-product-attributes.png)
+
+- At the bottom left, there is a 'Keep Shopping' button to redirect the user to the 'All Products' page if they wish to return.
+
 - The shopper is able to modify the quantity they wish to add to their bag. There is logic in place (in `quantity_input_script.html`) so that they are only allowed to have within a range of 1-10 of the individual product in their bag. A validation message will pop up if otherwise, and the request won't be added to the user's bag.
 
   - ![Bag Quantity - Validation](/static/docs/features/feature-product-quantity-validation.png)
 
-- At the bottom left, there is a 'Keep Shopping' button to redirect the user to the 'All Products' page if they wish to return.
+- Once the shopper has added a produc to their bag, a success toast appears which displays a bag preview (with the total price) and also allows the user to view their bag.
+  - ![Add to Bag - Success](/static/docs/features/feature-add-bag-success.png)
 
-- Depending on the products' corresponding data, if they are pet-friendly, this attribute will dynamically be listed under the product's description. Along with the associated Light and Care level, these attributes have a short description next to a user-friendly icon.
-  - ![Product Attributes - Example](/static/docs/features/feature-product-attributes.png)
+### Bag
+
+![Bag](/static/docs/features/feature-bag.png)
+
+- A user can easily view their bag (via the navigation header or add to bag success toast message).
+- If the user has not reached the minimum requirement for free delivery (set by the shop owner), the delta needed will be displayed to the user. This is also to incentivize shoppers to purchase more to be 'rewarded' free delivery.
+  - ![Bag Delivery](/static/docs/features/feature-bag-delivery.png)
+- This is also reinforced with success toast messages, as shown below.
+  - ![Delivery Toast](/static/docs/features/feature-toast-delivery.png)
+- Within their bag, the user is able to modify the quantity or completely remove the item.
+- If item is removed, there will be a success message and the user is able to redirect back to the shopping page via the 'Keep Shopping' button.
+  - ![Removed from Bag - Success](/static/docs/features/feature-bag-removed.png)
+- Only when a user has an item in their bag, are they able to proceed with 'checkout'.
+
+### Checkout
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ### Footer
 
