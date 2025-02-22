@@ -349,29 +349,86 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 - The 'Contact' navigation link opens a new tab to the company's Facebook page in case they would like to contact the company for any questions/ issues around orders.
 - When the navigation links are hovered, they change font colour to white to indicate they are interactive.
 - The search bar is functional and will be further discussed in the Product Page section. This feature allows for the user to directly search for a product if they do not see it immediately.
-- The user icon and bag icon are UI-friendly and when hovered turn less opaque to indicate they are interactive. Their respective functionality (profile and bag) will be elaborated on in the later sections.
+- The user icon and bag icon are UI-friendly and when hovered turn less opaque to indicate they are interactive. If a user is not currently logged in, when the icon is clicked on there will be a drop-down list to 'Register' or 'Login'. More functionality (profile and bag) will be elaborated on in succeeding sections.
 - Within the header, below the navigation bar, is the 'announcements' banner. This is where the shop owner can display announcements or engage with the customer with promotions or incentive. The striking colours are to help catch the shoppers' eye.
 
 ### Home Page
 
 - The Home Page (`index.html`) consists of three sections.
 
-- Section 1 - Shop All
+- Home Section 1 - Shop All
 
   - ![Shop All](/static/docs/features/feature-home-1.png)
   - The button directs users to the all products page and when hovered has its colours inverted (within the projects' colour scheme) to entice the users to click.
 
-- Section 2 - Shop By Collection
+- Home Section 2 - Shop By Collection
 
   - ![Shop By Collection](/static/docs/features/feature-home-2.png)
   - The users gain more insight into what type of plants are sold and can conveniently choose which type they fancy on shopping.
   - The section images are handled by Bootstrap/css configuration to adapt to media queries.
   - ![Shop By Collection - Mobile](/static/docs/features/feature-home-2-mobile.png)
 
-- Section 3 - About Us
+- Home Section 3 - About Us
   - ![About Us](/static/docs/features/feature-home-3.png)
   - This section informs/ encourages the users to shop on this website, providing positive insight and context of the Hygge Houseplants company and their virtues.
   - Once again, this is handled with Bootstrap/css to fit according to device sizes.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+### Products Page
+
+![Products](/static/docs/features/feature-products-page.png)
+
+- The Products page (`products.html`) is where users can browse/shop all the products.
+
+- The page has a clear title on top, with category badges below for the users to easily filter the category of products.
+
+- When a user clicks on a Category badge, they will also have an option to view 'All Products again'
+
+  - ![All Products](/static/docs/features/feature-products-all.png)
+
+- The number of products displayed on the page is indicated to the users on the top left (so they are aware of how many they can expect to browse through).
+
+- On the right hand side, is where the Sort drop-down feature is positioned. When clicked on, a drop-down list is shown (which can be closed once clicked outside). This sort feature is for the customers to customise the ordering of the products being shown by rating and price (high to low or vice-versa). This is handy for users for when there are a lot of products to browse through and they can prioritise which products to view.
+
+  - ![Sort](/static/docs/features/feature-products-sort.png)
+
+- At the bottom right, there is a scroll up feature, where the user can conveniently pop all the way back up immediately. This will be a useful feature, when there are many products available and the user does not want to scroll a long way back up.
+
+  - ![Scroll](/static/docs/features/feature-products-scroll.png)
+
+- Each product cards have the respective product's image, name, price, rating (if any), and if the user is an admin (i.e., superuser) they also have features to edit/delete the item, as shown below.
+
+  - ![Products View for superusers](/static/docs/features/feature-products-superuser.png)
+
+- The 'Edit' link will direct the superuser to a the respective products' form where they can edit the fields.
+
+- The 'Delete' link will delete the Product and this action will be confirmed by a toast message.
+
+- Only superusers have the ability to modify, and even if a 'normal' user attempts to type in the URL to edit/delete/add a product, they will not be able to.
+
+- To add a product, a superuser (once logged in) can either enter at the end of the URL `/products/add` or click on the user icon and go to 'Product Management'. Below is a screenshot of a superadmin adding a product using the Product Management form.
+  - ![Add Product](/static/docs/features/feature-products-add.png)
+- Once the superadmin has correctly and successfully submitted the 'Add Product' form, they will be directed to the new product's info page and there will also be a success toast message for confirmation.
+  - ![Add Product Success](/static/docs/features/feature-products-add-success.png)
+
+### Products - Individual Page
+
+![Products - Individual](/static/docs/features/feature-product-individual.png)
+
+- The invidiual product page (`products-info.html`) is where the user can view more details on their selected product. If they are a superuser, they will also be able to edit/delete the product via this view as well.
+- The shopper is able to modify the quantity they wish to add to their bag. There is logic in place (in `quantity_input_script.html`) so that they are only allowed to have within a range of 1-10 of the individual product in their bag. A validation message will pop up if otherwise, and the request won't be added to the user's bag.
+
+  - ![Bag Quantity - Validation](/static/docs/features/feature-product-quantity-validation.png)
+
+- At the bottom left, there is a 'Keep Shopping' button to redirect the user to the 'All Products' page if they wish to return.
+
+- Depending on the products' corresponding data, if they are pet-friendly, this attribute will dynamically be listed under the product's description. Along with the associated Light and Care level, these attributes have a short description next to a user-friendly icon.
+  - ![Product Attributes - Example](/static/docs/features/feature-product-attributes.png)
 
 ### Footer
 
