@@ -533,6 +533,10 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
   - A typical component of e-commerce websites are a 'Returns & Refunds' form/ section within the User Profile. This could be a future implementation to improve the users' experience instead of having to send a message via Facebook to the company.
 
+- Save Payment Methods to Profile
+
+  - Depending on the user's browser, that is the only way that they can currently save their payment card details. If the stored payment data were to be cached (with user's permission) at the checkout page that would be a more seamless user experience.
+
 - Complete any outstanding [user stories](#testing-user-stories)
 
 \
