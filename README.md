@@ -459,6 +459,22 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 ### Checkout
 
+![Bag](/static/docs/features/feature-checkout.png)
+
+- Shoppers who have not logged in yet, will view the links below the Delivery Form to quickly 'Create an account' or 'Login'. Users who have logged in and have Delivery information saved within their profile, will conveniently have their delivery information filled in automatically at the Checkout page.
+
+- The Delivery Form has its own validation and the required fields are indicated with asterisks.
+- Next to the Delivery Form is the Order Summary, where the product's image, quantity, price and subtotal are calculated and displayed.
+- At the bottom of the checkout page, the user can enter their payment details (and since this is using Stripe, they may also be able to save their card details depending on their browser).
+- Stripe authentication and webhooks are in place and used for card payments, and to handle card authentication if required.
+  - ![Stripe Payment Input - Validation](/static/docs/features/feature-stripe-expiry.png)
+- While the payment is being authenticated, there is a loading page with animation to indicate to the user that the transaction is occurring.
+- ![Stripe Payment - Loading](/static/docs/features/feature-payment-loading.png)
+- This order will also be available in the user's Order History (in their Profile).
+- If the checkout transaction is successful, the user will be directed to an order confirmation page, along with a success toast. An example of this is displayed below.
+  - ![Stripe Payment - Success](/static/docs/features/feature-checkout-success-return.png)
+- Below this order confirmation, there is a 'Back to Shopping' button to redirect the users to shop again.
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -474,8 +490,9 @@ The first design phase of the database models was mapped out using [DrawSQL](htt
 
 ### Accessibility
 
-- url configuration
-- img
+- URL configurations that can be entered/edited by the user (configured in the modules' `urls.py`), intentionally have dashes (-) and not underscores (\_) for ease of input.
+
+- All images have `alt` attributes to provide an alternative, screen-reader friendly text description.
 
 \
 &nbsp;
