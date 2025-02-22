@@ -701,6 +701,16 @@ A tool called 'Coverage' has been installed and used to check and create reports
   - There was a logged bug (Issue #40) where the user would checkout, which resulted in the stripe loading page then back to the checkout page, and not the order confirmation page as expected. There was no success toast either.
   - My stripe dashboard confirmed that the transaction start but was 'incomplete'. Hence, by using the webhooks and Stripe CLI, it was evinced that there was an error with the `cache_checkout_data` view. Once the respective path in `urls.py (checkout)` was corrected the Stripe payment was successful and the order confirmation page was shown as expected.
 
+- Media Files
+
+  - In the Heroku Settings (Config Vars), when 'Debug' was switched from True to False, there were 404 Errors for the product images (all located in the media folder).
+    - ![Debug - Media 404 Error](/static/docs/tests/debug-media-error.png)
+      After some research, it appears that Djagno's WhiteNoise tool only stores static folders. To resolve this, the following steps were conducted:
+    - In `settings.py`, replace `MEDIA_URL = '/static/'` with `MEDIA_URL = '/static/media/'`
+    - Relocated the Media Folder (in project root level) into the Static Folder.
+    - This resolved the media 404 error and the Prodct Images are now loading successfully.
+    - It is acknowledged that this should be further investigated to see if there is a better solution (in terms of Static folder storage).
+
 ## Unfixed Bugs
 
 - Profile Page
